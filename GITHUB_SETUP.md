@@ -14,8 +14,17 @@ No remote is configured by the repository split.
    git push -u origin main
    ```
 
-   The existing `github-symmetry` SSH host alias can be used instead of
-   `github.com` if that is the key configured for your GitHub account.
+   Use an SSH identity registered to your GitHub account. In the current local
+   configuration, `github.com` authenticates as `musicarroll`, while
+   `github-symmetry` uses the private monograph's repository-specific deploy key
+   and cannot push to this companion repository.
+
+   If `origin` already exists, change its URL rather than adding it again:
+
+   ```bash
+   git remote set-url origin git@github.com:musicarroll/symmetry-companion.git
+   git push -u origin main
+   ```
 3. Confirm the GitHub page is public and the Lean workflow passes. The workflow
    validates the exported statement inventory; it has no private manuscript
    credentials or dependency.
