@@ -1,0 +1,164 @@
+\section{Algebra, infinity, and formalization}
+
+\begin{frame}{Operations are constrained relations}
+  \bookref{Chapter 4, Sections 1--3}
+  A binary operation $\mu:X\times X\to X$ is encoded by
+  \[
+    \Gamma_\mu=\{(x,y,z)\in X^3:\mu(x,y)=z\}.
+  \]
+  The relation is functional and total in the third coordinate:
+  \[
+    \forall x,y\in X\;\exists!z\in X:\;(x,y,z)\in\Gamma_\mu.
+  \]
+
+  \begin{theorem}
+    A permutation $f:X\to X$ preserves $\mu$ iff it preserves $\Gamma_\mu$:
+    \[
+      f(\mu(x,y))=\mu(f(x),f(y))
+      \iff
+      f^{\times3}(\Gamma_\mu)=\Gamma_\mu.
+    \]
+  \end{theorem}
+
+  Thus finite groups, rings, semigroups, lattices, and general universal
+  algebras enter the same automorphism framework.
+\end{frame}
+
+\begin{frame}{A complete two-element operation ensemble}
+  \bookref{Chapter 4, Section 4}
+  There are $n^{n^2}$ labeled binary operations on an $n$-element set; for
+  $n=2$, this is $16$.
+
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \centering
+      \begin{tabular}{ccc}
+        \toprule
+        $|\Aut|$ & classes & labeled tables \\
+        \midrule
+        $1$ & $6$ & $12$ \\
+        $2$ & $4$ & $4$ \\
+        \midrule
+        total & $10$ & $16$ \\
+        \bottomrule
+      \end{tabular}
+    \column{0.48\textwidth}
+      \centering
+      \begin{tabular}{lcc}
+        \toprule
+        constraint & labeled & classes \\
+        \midrule
+        associative & $8$ & $5$ \\
+        commutative & $8$ & $4$ \\
+        monoid & $4$ & $2$ \\
+        group & $2$ & $1$ \\
+        \bottomrule
+      \end{tabular}
+  \end{columns}
+
+  \vspace{0.7em}
+  Algebraic laws define sharply smaller subensembles, while orbit multiplicity
+  continues to be $n!/|\Aut(A)|$.
+\end{frame}
+
+\begin{frame}{In infinity, the signature becomes decisive}
+  \bookref{Chapter 5, Sections 1--2}
+  \small
+  \centering
+  \begin{tabular}{lll}
+    \toprule
+    underlying set & specified structure & residual symmetry \\
+    \midrule
+    $\Z$ & additive group & $n\mapsto\pm n$ \\
+    $\Z$ & unital ring & identity only \\
+    $\Z$ & ordered unital ring & identity only \\
+    $\R$ & $\mathbb Q$-vector space & many linear automorphisms \\
+    $\R$ & field & identity only \\
+    $\R^n$ & vector space & $\mathrm{GL}_n(\R)$ \\
+    $\R^n$ & inner-product space & $O(n)$ \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{0.4em}
+  Infinite groups of the same cardinality may represent radically different
+  symmetry. Consequently,
+  \[
+    \log\frac{|\Aut(X)|}{|\Aut(A)|}
+  \]
+  is generally not a meaningful numerical invariant.
+\end{frame}
+
+\begin{frame}{Candidate infinite symmetry deficits}
+  \bookref{Chapter 5, Sections 3--4; Chapter 6}
+  \centering
+  \begin{tabular}{lll}
+    \toprule
+    candidate & natural setting & principal limitation \\
+    \midrule
+    $\log[G:H]$ & finite-index residual symmetry & often infinite \\
+    $\dim G-\dim H$ & Lie/algebraic groups & misses wild groups \\
+    quotient measure & compact/measured groups & needs invariant measure \\
+    finite-window rate & growing physical domains & boundary dependent \\
+    measure relative entropy & phase laws on $G/H$ & needs reference measure \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{0.7em}
+  \begin{block}{Reference-relative requirement}
+    Choose a structured background $B$ and $G\leq\Aut(B)$. Compare the phase
+    stabilizer $H$ with $G$; $G=\Sym(X)$ is reserved for a genuinely bare set.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Relational scaling taxonomy}
+  \bookref{Chapter 6, Section 6}
+  \small
+  \begin{center}
+    \begin{tabular}{lll}
+      \toprule
+      quantity & question answered & caution \\
+      \midrule
+      $I_G=\log[G:H]$ & which finite sector is selected? & may be subextensive \\
+      $\widetilde I_G=I_G/\log|G|$ & what fraction of $G$ is lost? & not a density \\
+      $I_L/a_L$ & is symmetry loss extensive? & declare $a_L$ \\
+      $D(\rho),\widehat D$ & is a coarse pattern visible? & model-dependent proxy \\
+      $a_L\operatorname{Var}(Q_L)$ & how do fluctuations scale? & depends on $Q_L$ \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+
+  \begin{block}{Reporting rule}
+    Use total deficit for discrete selection and a declared deficit rate for
+    extensive ordering. Never identify a block proxy with a normalized
+    automorphism deficit without an explicit relation between them.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Machine-checked core}
+  \bookref{Appendix D; Lean sources and formalization ledger}
+  \footnotesize
+  Every numbered statement is paired with a checked ledger entry.
+
+  \begin{columns}[T,onlytextwidth]
+  \begin{column}{0.43\textwidth}
+    \scriptsize
+    \input{../lean/generated/lean-ledger-counts.tex}
+  \end{column}
+  \begin{column}{0.54\textwidth}
+  \begin{itemize}
+    \item Chapters 1--2 and 4 connect automorphism subgroups, relabeling orbits,
+      finite partition sums, and extremal equality cases.
+    \item Chapter 3 checks general-mean $O(d^6)$ control, quartic local minima,
+      the inverse-branch $3/8$ limit, and orthogonal field-energy invariance.
+    \item Chapter 6 also checks Haar index, relative entropy, and scalar-unitary
+      invariance of fixed-number and one-particle operators.
+    \item Continuum limits, quotient geometry, gauge variation, and XY analysis
+      remain open; the condensation theorem is an external citation.
+  \end{itemize}
+  \end{column}
+  \end{columns}
+
+  \medskip
+  Appendix D records the proof scope. Two unnumbered identities and nine
+  supplementary targets are tracked separately.
+\end{frame}

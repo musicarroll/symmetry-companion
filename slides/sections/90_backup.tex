@@ -1,0 +1,88 @@
+\section{Backup}
+
+\begin{frame}{Backup: exact derivatives on the contrast slice}
+  \bookref{Chapter 3, Section 5}
+  For
+  \[
+    h(u)=-u\log u-(1-u)\log(1-u),
+  \]
+  \[
+    h''(u)=-\frac{1}{u(1-u)},
+    \qquad
+    h^{(4)}(u)=-\frac{2(1-3u+3u^2)}{u^3(1-u)^3}.
+  \]
+  At $u=1/2$,
+  \[
+    h''(1/2)=-4,
+    \qquad
+    h^{(4)}(1/2)=-32.
+  \]
+  Hence
+  \[
+    \mathcal G''_{\beta,J}(0)=2(4-2\beta J),
+    \qquad
+    \mathcal G^{(4)}_{\beta,J}(0)=64
+      =24\left(\frac83\right).
+  \]
+\end{frame}
+
+\begin{frame}{Backup: representative numerical minimizers}
+  \bookref{Chapter 3, Section 11; Appendix B}
+  \centering
+  \begin{tabular}{ccccc}
+    \toprule
+    $\beta$ & $p_*$ & $q_*$ & $\Delta=|p_*-q_*|$ & phase \\
+    \midrule
+    $1.500$ & $0.500000$ & $0.500000$ & $0$ & symmetric \\
+    $2.000$ & $0.500000$ & $0.500000$ & $0$ & threshold grid point \\
+    $2.025$ & $0.595760$ & $0.404240$ & $0.191520$ & broken \\
+    $2.500$ & $0.855205$ & $0.144795$ & $0.710411$ & broken \\
+    $3.000$ & $0.929280$ & $0.070720$ & $0.858560$ & broken \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{1em}
+  The symmetry-related companion minimizer is obtained by exchanging $p_*$ and
+  $q_*$. The grid establishes agreement to its resolution, not an independent
+  numerical proof of the exact threshold.
+\end{frame}
+
+\begin{frame}{Backup: exact finite compatibility}
+  \bookref{Chapter 5, Section 3}
+  Suppose an infinite theory assigns a deficit $\mathcal I(G,H)$ to residual
+  symmetry $H\leq G$. At minimum, finite compatibility asks for
+  \[
+    \mathcal I(G,H)=\log[G:H]
+    \qquad\text{when }[G:H]<\infty.
+  \]
+  In the original setting,
+  \[
+    G=\Sym(X),\qquad H=\Aut(S),
+  \]
+  so
+  \[
+    \mathcal I(G,H)=\log\frac{|G|}{|H|}=I(S).
+  \]
+
+  Dimension, quotient measure, and entropy-rate proposals should therefore be
+  viewed as category-specific continuations of the orbit-size principle.
+\end{frame}
+
+\begin{frame}{Backup: notation distinguishes three diagnostics}
+  \bookref{Chapters 1 and 3; Appendices}
+  \centering
+  \begin{tabular}{lll}
+    \toprule
+    symbol here & definition & role \\
+    \midrule
+    $I(S)$ & $\log(n!/|\Aut(S)|)$ & exact finite invariant \\
+    $I_\Gamma$ & $\log(|\Gamma|/|\Stab_\Gamma|)$ & reduced discrete invariant \\
+    $D_{\mathrm{cont}}$ & $(p-q)^2$ & continuous two-block proxy \\
+    $D_{\mathrm{lat}}$ & $q^{-1}\sum_i(f_i-q^{-1})^2$ & lattice proxy \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{0.8em}
+  These quantities agree on which simple phases are symmetric, but they are not
+  numerically identical and need not share critical exponents.
+\end{frame}

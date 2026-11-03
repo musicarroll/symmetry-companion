@@ -1,0 +1,19 @@
+Two-Block Numerical Validation Summary
+J = 1.0
+Predicted beta_c = 2.000000
+Numerical beta_c from symmetry deficit = 2.005
+Detected onset of nonzero Delta = 2.005
+Detected onset of nonzero symmetry deficit = 2.005
+Detected antisymmetric sign change = 2.005
+Delta onset minus beta_c = 0.004999999999999893
+Symmetry-deficit onset minus beta_c = 0.004999999999999893
+Critical exponent estimate for symmetry deficit = 0.9711187638636498
+Number of points in scaling fit = 19
+Critical scaling RMS log-error = 0.008459237515092465
+
+Symmetry-deficit check: The onset of nonzero symmetry deficit is numerically close to the predicted critical threshold.
+Delta check: The onset of nonzero Delta is numerically close to the predicted critical threshold.
+Antisymmetric curvature check: The antisymmetric symmetric-point curvature changes sign near the predicted threshold.
+Scaling check: The symmetry-deficit scaling exponent is consistent with the mean-field expectation alpha ≈ 1.
+
+Assessment: The local Hessian/Landau threshold agrees with beta_c = 2/J, and in this refined two-block model the explicit symmetry deficit behaves as the primary symmetry-based observable while Delta serves as its reduced proxy. Its near-threshold scaling is also consistent with the mean-field expectation that symmetry deficit is quadratic in the order parameter.

@@ -1,0 +1,905 @@
+[
+  {
+    "category": "numbered",
+    "kind": "lemma",
+    "label": "lem:aut-size-bound",
+    "leanNames": [
+      "SymmetryMonograph.aut_size_bound"
+    ],
+    "scope": "Finite underlying type. Relabeling.lean additionally treats indexed relations of arbitrary arity.",
+    "source": "chapters/ch1/section1.tex",
+    "status": "complete",
+    "title": "lem:aut-size-bound"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "thm:symmetry-deficit-basic-bounds",
+    "leanNames": [
+      "SymmetryMonograph.symmetryDeficit_nonneg",
+      "SymmetryMonograph.symmetryDeficit_eq_zero_iff_autSet_eq_univ",
+      "SymmetryMonograph.rigid_symmetryDeficit_eq_log_perm_card",
+      "SymmetryMonograph.degreeOfOrder_nonneg",
+      "SymmetryMonograph.degreeOfOrder_le_perm_card_sub_one",
+      "SymmetryMonograph.rigid_degreeOfOrder_eq_perm_card_sub_one",
+      "SymmetryMonograph.symmetryDeficit_le_log_perm_card",
+      "SymmetryMonograph.symmetryDeficit_eq_max_iff_rigid",
+      "SymmetryMonograph.degreeOfOrder_eq_max_iff_rigid",
+      "SymmetryMonograph.RelationalModel.symmetryDeficit_bounds",
+      "SymmetryMonograph.RelationalModel.symmetryDeficit_eq_zero_iff",
+      "SymmetryMonograph.RelationalModel.symmetryDeficit_eq_max_iff",
+      "SymmetryMonograph.RelationalModel.degreeOfOrder_bounds",
+      "SymmetryMonograph.RelationalModel.degreeOfOrder_eq_max_iff"
+    ],
+    "scope": "Deficit and degree-of-order bounds and extremal equality cases, including arbitrary indexed relation arities.",
+    "source": "chapters/ch1/section2.tex",
+    "status": "complete",
+    "title": "thm:symmetry-deficit-basic-bounds"
+  },
+  {
+    "category": "numbered",
+    "kind": "lemma",
+    "label": "lean:automorphism-group-under-refinement",
+    "leanNames": [
+      "SymmetryMonograph.refinement_aut_subset",
+      "SymmetryMonograph.refinement_aut_card_le",
+      "SymmetryMonograph.RelationalModel.aut_le_restrict"
+    ],
+    "scope": "Adding named relations, represented by forgetting symbols in the reverse direction; not inclusion of tuples inside one relation.",
+    "source": "chapters/ch1/section3.tex",
+    "status": "complete",
+    "title": "automorphism group under refinement"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "lean:symmetry-deficit-monotonicity-under-refinement",
+    "leanNames": [
+      "SymmetryMonograph.refinement_symmetryDeficit_le"
+    ],
+    "scope": "",
+    "source": "chapters/ch1/section3.tex",
+    "status": "complete",
+    "title": "symmetry deficit monotonicity under refinement"
+  },
+  {
+    "category": "numbered",
+    "kind": "lemma",
+    "label": "lem:relation-ops-equivariant",
+    "leanNames": [
+      "SymmetryMonograph.relMap_union",
+      "SymmetryMonograph.relMap_inter",
+      "SymmetryMonograph.relMap_diff",
+      "SymmetryMonograph.relMap_comp"
+    ],
+    "scope": "",
+    "source": "chapters/ch1/section4.tex",
+    "status": "complete",
+    "title": "lem:relation-ops-equivariant"
+  },
+  {
+    "category": "numbered",
+    "kind": "lemma",
+    "label": "lem:aut-inherited-by-ops",
+    "leanNames": [
+      "SymmetryMonograph.preserves_union",
+      "SymmetryMonograph.preserves_inter",
+      "SymmetryMonograph.preserves_diff",
+      "SymmetryMonograph.preserves_comp"
+    ],
+    "scope": "",
+    "source": "chapters/ch1/section4.tex",
+    "status": "complete",
+    "title": "lem:aut-inherited-by-ops"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "prop:separate-relations-intersection",
+    "leanNames": [
+      "SymmetryMonograph.pair_autSet_eq_inter"
+    ],
+    "scope": "",
+    "source": "chapters/ch1/section4.tex",
+    "status": "complete",
+    "title": "prop:separate-relations-intersection"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "lean:complement-and-converse-preserve-symmetry-deficit",
+    "leanNames": [
+      "SymmetryMonograph.preserves_compl_iff",
+      "SymmetryMonograph.preserves_conv_iff",
+      "SymmetryMonograph.single_autSet_compl_eq",
+      "SymmetryMonograph.single_autSet_conv_eq",
+      "SymmetryMonograph.symmetryDeficit_compl_eq",
+      "SymmetryMonograph.symmetryDeficit_conv_eq"
+    ],
+    "scope": "",
+    "source": "chapters/ch1/section4.tex",
+    "status": "complete",
+    "title": "Complement and converse preserve symmetry deficit"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "prop:invariant-operand-bounds",
+    "leanNames": [
+      "SymmetryMonograph.invariant_operand_union_aut_subset",
+      "SymmetryMonograph.invariant_operand_inter_aut_subset",
+      "SymmetryMonograph.invariant_operand_diff_aut_subset",
+      "SymmetryMonograph.invariant_operand_union_symmetryDeficit_le",
+      "SymmetryMonograph.invariant_operand_inter_symmetryDeficit_le",
+      "SymmetryMonograph.invariant_operand_diff_symmetryDeficit_le"
+    ],
+    "scope": "",
+    "source": "chapters/ch1/section4.tex",
+    "status": "complete",
+    "title": "prop:invariant-operand-bounds"
+  },
+  {
+    "category": "numbered",
+    "kind": "lemma",
+    "label": "lem:labeled-realizations-orbit-stabilizer",
+    "leanNames": [
+      "SymmetryMonograph.Chapter2.orbit_card_mul_stabilizer_card",
+      "SymmetryMonograph.Chapter2.orbit_card_eq_group_card_div_stabilizer_card",
+      "SymmetryMonograph.RelationalModel.symmetryDeficit_eq_log_orbit",
+      "SymmetryMonograph.RelationalModel.class_fiber_card",
+      "SymmetryMonograph.RelStructure.autSet_eq_model_aut"
+    ],
+    "scope": "Actual relabeling action, automorphism subgroup, and isomorphism-class fiber.",
+    "source": "chapters/ch2/section4.tex",
+    "status": "complete",
+    "title": "lem:labeled-realizations-orbit-stabilizer"
+  },
+  {
+    "category": "identity",
+    "kind": "identity",
+    "label": "",
+    "leanNames": [
+      "SymmetryMonograph.Chapter2.partition_entropy_energy_form",
+      "SymmetryMonograph.RelationalModel.labeled_partition_eq_class_partition"
+    ],
+    "scope": "Finite fixed signature and finite underlying type; energy is constant on isomorphism classes.",
+    "source": "chapters/ch2/section4.tex",
+    "status": "complete",
+    "title": "entropy-energy form of relational partition function"
+  },
+  {
+    "category": "identity",
+    "kind": "identity",
+    "label": "",
+    "leanNames": [
+      "SymmetryMonograph.Chapter2.symmetry_deficit_eq_log_degeneracy",
+      "SymmetryMonograph.symmetryDeficit_eq_log_orbit"
+    ],
+    "scope": "Instantiated at the relabeling orbit of a binary structure; also proved for arbitrary indexed arities.",
+    "source": "chapters/ch2/section5.tex",
+    "status": "complete",
+    "title": "symmetry deficit as logarithmic degeneracy"
+  },
+  {
+    "category": "numbered",
+    "kind": "lemma",
+    "label": "lem:symmetry-entropy-additive-under-multiplicativity",
+    "leanNames": [
+      "SymmetryMonograph.Chapter2.entropy_additive_of_degeneracy_multiplicative"
+    ],
+    "scope": "Conditional on multiplicative degeneracy; does not assert multiplicativity for unrestricted disjoint unions.",
+    "source": "chapters/ch2/section5.tex",
+    "status": "complete",
+    "title": "lem:symmetry-entropy-additive-under-multiplicativity"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "prop:stirling-maximal-symmetry-deficit-growth",
+    "leanNames": [
+      "SymmetryMonograph.Chapter2.log_factorial_stirling_bigO",
+      "SymmetryMonograph.Chapter2.log_factorial_stirling_remainder_eventually"
+    ],
+    "scope": "",
+    "source": "chapters/ch2/section5.tex",
+    "status": "complete",
+    "title": "prop:stirling-maximal-symmetry-deficit-growth"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "lean:k-block-euler-lagrange-equations",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.hasDerivAt_binaryEntropy_of_interior",
+      "SymmetryMonograph.Chapter3.kBlockEulerLagrange_of_coordCritical",
+      "SymmetryMonograph.Chapter3.kBlockEulerLagrange_of_interior_coordCritical"
+    ],
+    "scope": "Interior densities and a coordinate derivative hypothesis on the supplied energy functional.",
+    "source": "chapters/ch3/section3.tex",
+    "status": "complete",
+    "title": "k-block Euler--Lagrange equations"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "lean:continuum-euler-lagrange-equation",
+    "leanNames": [],
+    "scope": "",
+    "source": "chapters/ch3/section3.tex",
+    "status": "analyticHeavy",
+    "title": "continuum Euler--Lagrange equation"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "lean:second-variation-of-homogeneous-phase",
+    "leanNames": [],
+    "scope": "",
+    "source": "chapters/ch3/section3.tex",
+    "status": "analyticHeavy",
+    "title": "second variation of homogeneous phase"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "lean:two-block-euler-lagrange-equations",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.hasPartialP_twoBlockFreeEnergy",
+      "SymmetryMonograph.Chapter3.hasPartialQ_twoBlockFreeEnergy",
+      "SymmetryMonograph.Chapter3.twoBlock_eulerLagrange_of_critical",
+      "SymmetryMonograph.Chapter3.twoBlock_criticalEquations_iff_neg_logOdds"
+    ],
+    "scope": "",
+    "source": "chapters/ch3/section4.tex",
+    "status": "complete",
+    "title": "two-block Euler--Lagrange equations"
+  },
+  {
+    "category": "numbered",
+    "kind": "lemma",
+    "label": "lean:diagonal-branch-of-two-block-system",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.twoBlock_diagonal_branch"
+    ],
+    "scope": "",
+    "source": "chapters/ch3/section4.tex",
+    "status": "complete",
+    "title": "diagonal branch of two-block system"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "lean:two-block-hessian-and-modes",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.twoBlockHessian",
+      "SymmetryMonograph.Chapter3.twoBlock_hessian_at_symmetric_point_eq",
+      "SymmetryMonograph.Chapter3.twoBlock_hessian_symmetric_mode",
+      "SymmetryMonograph.Chapter3.twoBlock_hessian_antisymmetric_mode",
+      "SymmetryMonograph.Chapter3.twoBlockHessian_is_gradient_jacobian"
+    ],
+    "scope": "Second partial derivatives and the resulting operator/eigenmode identities on the interior.",
+    "source": "chapters/ch3/section4.tex",
+    "status": "complete",
+    "title": "two-block Hessian and modes"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "lean:unrefined-curvature-threshold-at-the-half-point",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.twoBlock_unstable_iff",
+      "SymmetryMonograph.Chapter3.twoBlock_critical_threshold_at_half",
+      "SymmetryMonograph.Chapter3.twoBlock_centered_critical_iff"
+    ],
+    "scope": "Curvature changes at beta J = 4. The half point is stationary only when beta J = 0.",
+    "source": "chapters/ch3/section4.tex",
+    "status": "complete",
+    "title": "unrefined curvature threshold at the half point"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "thm:two-block-hessian-stability",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.twoBlock_unstable_iff",
+      "SymmetryMonograph.Chapter3.twoBlock_critical_threshold_at_half",
+      "SymmetryMonograph.Chapter3.twoBlock_hessian_posDef_at_half",
+      "SymmetryMonograph.Chapter3.twoBlock_hessian_negative_antisymmetric_at_half"
+    ],
+    "scope": "Positive definiteness below the threshold and a negative direction above it; no equilibrium assertion.",
+    "source": "chapters/ch3/section4.tex",
+    "status": "complete",
+    "title": "thm:two-block-hessian-stability"
+  },
+  {
+    "category": "numbered",
+    "kind": "lemma",
+    "label": "lean:refined-two-block-first-derivatives",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.hasPartialP_refinedTwoBlockFreeEnergy",
+      "SymmetryMonograph.Chapter3.hasPartialQ_refinedTwoBlockFreeEnergy",
+      "SymmetryMonograph.Chapter3.refined_first_derivatives"
+    ],
+    "scope": "",
+    "source": "chapters/ch3/section4.tex",
+    "status": "complete",
+    "title": "refined two-block first derivatives"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "lean:refined-two-block-symmetric-branch",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.log_odds_eq_zero_iff_eq_half",
+      "SymmetryMonograph.Chapter3.refined_symmetric_branch_iff"
+    ],
+    "scope": "",
+    "source": "chapters/ch3/section4.tex",
+    "status": "complete",
+    "title": "refined two-block symmetric branch"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "lean:refined-two-block-hessian",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.refinedHessian",
+      "SymmetryMonograph.Chapter3.refinedHessian_at_half_eq",
+      "SymmetryMonograph.Chapter3.refinedHessian_is_gradient_jacobian"
+    ],
+    "scope": "",
+    "source": "chapters/ch3/section4.tex",
+    "status": "complete",
+    "title": "refined two-block Hessian"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "lean:refined-two-block-hessian-eigenmodes",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.refined_hessian_symmetric_mode",
+      "SymmetryMonograph.Chapter3.refined_hessian_antisymmetric_mode"
+    ],
+    "scope": "",
+    "source": "chapters/ch3/section4.tex",
+    "status": "complete",
+    "title": "refined two-block Hessian eigenmodes"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "lean:refined-two-block-critical-instability",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.refined_antisymmetric_mode_unstable_iff"
+    ],
+    "scope": "",
+    "source": "chapters/ch3/section4.tex",
+    "status": "complete",
+    "title": "refined two-block critical instability"
+  },
+  {
+    "category": "numbered",
+    "kind": "lemma",
+    "label": "lem:binary-entropy-derivatives",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.hasDerivAt_logOdds_of_interior",
+      "SymmetryMonograph.Chapter3.hasDerivAt_logOdds_binaryEntropySecondFormula",
+      "SymmetryMonograph.Chapter3.hasDerivAt_binaryEntropySecondFormula",
+      "SymmetryMonograph.Chapter3.hasDerivAt_binaryEntropyThirdFormula",
+      "SymmetryMonograph.Chapter3.binaryEntropy_successive_derivatives_through_four",
+      "SymmetryMonograph.Chapter3.binaryEntropy_derivative_formulas_at_half"
+    ],
+    "scope": "",
+    "source": "chapters/ch3/section5.tex",
+    "status": "complete",
+    "title": "lem:binary-entropy-derivatives"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "prop:landau-local-form",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.symmetricContrastFreeEnergy_eq_refined",
+      "SymmetryMonograph.Chapter3.hasDerivAt_symmetricContrastFreeEnergy",
+      "SymmetryMonograph.Chapter3.hasDerivAt_symmetricContrastFirst",
+      "SymmetryMonograph.Chapter3.hasDerivAt_symmetricContrastSecond",
+      "SymmetryMonograph.Chapter3.hasDerivAt_symmetricContrastThird",
+      "SymmetryMonograph.Chapter3.contrastLandauRemainder_isBigO"
+    ],
+    "scope": "Every fixed interior mean 0 < m < 1; exact displayed coefficients and O(d^6) remainder.",
+    "source": "chapters/ch3/section5.tex",
+    "status": "complete",
+    "title": "prop:landau-local-form"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "thm:landau-expansion-symmetric",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.symmetricContrastLandauJet",
+      "SymmetryMonograph.Chapter3.symmetricContrast_landau_jet",
+      "SymmetryMonograph.Chapter3.symmetricContrastLandauJet_eq",
+      "SymmetryMonograph.Chapter3.abs_symmetricContrastLandauRemainderFirst_le",
+      "SymmetryMonograph.Chapter3.abs_symmetricContrastLandauRemainder_le",
+      "SymmetryMonograph.Chapter3.abs_symmetricContrastLandauRemainder_le_on",
+      "SymmetryMonograph.Chapter3.symmetricContrastLandauRemainder_isBigO"
+    ],
+    "scope": "",
+    "source": "chapters/ch3/section5.tex",
+    "status": "complete",
+    "title": "thm:landau-expansion-symmetric"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "thm:landau-quartic-minimizers",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.quartic_unique_min_of_quadratic_pos",
+      "SymmetryMonograph.Chapter3.quartic_global_min_iff_sq_eq_of_quadratic_neg",
+      "SymmetryMonograph.Chapter3.quartic_localMin_iff_of_pos",
+      "SymmetryMonograph.Chapter3.quartic_localMin_iff_of_neg",
+      "SymmetryMonograph.Chapter3.quartic_zero_not_localMin",
+      "SymmetryMonograph.Chapter3.quartic_zero_isLocalMax"
+    ],
+    "scope": "Global and local minima of the quartic truncation for positive quartic coefficient.",
+    "source": "chapters/ch3/section5.tex",
+    "status": "complete",
+    "title": "thm:landau-quartic-minimizers"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "thm:exact-broken-stationary-pair",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.refinedStationary_symmetricContrast_iff",
+      "SymmetryMonograph.Chapter3.exactContrastCoupling_strictMonoOn",
+      "SymmetryMonograph.Chapter3.refinedStationary_sum_eq_one",
+      "SymmetryMonograph.Chapter3.refinedTwoBlockFreeEnergy_isLocalMin_at_positive_root",
+      "SymmetryMonograph.Chapter3.refinedTwoBlockFreeEnergy_isLocalMin_at_negative_root",
+      "SymmetryMonograph.Chapter3.exists_unique_exact_broken_local_min_pair"
+    ],
+    "scope": "",
+    "source": "chapters/ch3/section5.tex",
+    "status": "complete",
+    "title": "thm:exact-broken-stationary-pair"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "thm:exact-broken-branch-asymptotic",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.abs_exactContrastCoupling_normalized_sub_le",
+      "SymmetryMonograph.Chapter3.tendsto_exactContrastCoupling",
+      "SymmetryMonograph.Chapter3.tendsto_exactContrast_sq_div_coupling_sub_two",
+      "SymmetryMonograph.Chapter3.exactBrokenContrast_spec",
+      "SymmetryMonograph.Chapter3.tendsto_exactBrokenContrast",
+      "SymmetryMonograph.Chapter3.tendsto_exactBrokenContrast_sq_div_sub_two"
+    ],
+    "scope": "The inverse branch d_ex(K) is constructed, tends to zero, and satisfies the stated K-limit.",
+    "source": "chapters/ch3/section5.tex",
+    "status": "complete",
+    "title": "thm:exact-broken-branch-asymptotic"
+  },
+  {
+    "category": "numbered",
+    "kind": "lemma",
+    "label": "lean:o-m-invariance-of-continuum-functional",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.fieldEnergy_orthogonal_invariant"
+    ],
+    "scope": "Interval-integral field energy, differentiable real-normed-space fields, and linear isometry equivalences.",
+    "source": "chapters/ch3/section6.tex",
+    "status": "complete",
+    "title": "O(m)-invariance of continuum functional"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "lean:minima-of-radial-quartic-potential",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.radial_quartic_unique_min_of_quadratic_pos",
+      "SymmetryMonograph.Chapter3.radial_quartic_global_min_iff_sq_eq_of_quadratic_neg",
+      "SymmetryMonograph.Chapter3.radial_vector_min_iff_zero",
+      "SymmetryMonograph.Chapter3.radial_vector_min_iff_norm"
+    ],
+    "scope": "Vector minima in a nontrivial real normed space; positive radius is realized.",
+    "source": "chapters/ch3/section6.tex",
+    "status": "complete",
+    "title": "minima of radial quartic potential"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "lean:o-m-to-o-m-1-breaking-pattern",
+    "leanNames": [],
+    "scope": "",
+    "source": "chapters/ch3/section6.tex",
+    "status": "analyticHeavy",
+    "title": "O(m) to O(m-1) breaking pattern"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "lean:quadratic-expansion-around-chosen-vacuum",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.radial_quartic_vacuum_expansion"
+    ],
+    "scope": "Exact potential polynomial, including cubic and quartic terms; field decomposition and integrated remainder remain open.",
+    "source": "chapters/ch3/section6.tex",
+    "status": "partiallyComplete",
+    "title": "quadratic expansion around chosen vacuum"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "lean:relational-low-energy-fields",
+    "leanNames": [],
+    "scope": "",
+    "source": "chapters/ch3/section7.tex",
+    "status": "analyticHeavy",
+    "title": "Relational Low-Energy Fields"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "lean:connection-supplies-covariant-infinitesimal-comparison",
+    "leanNames": [],
+    "scope": "The present prose statement is conceptual; a precise bundle, gauge transformation, and covariance theorem remain to be specified.",
+    "source": "chapters/ch3/section8.tex",
+    "status": "needsDefinitions",
+    "title": "connection supplies covariant infinitesimal comparison"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "lean:curvature-obstructs-path-independence",
+    "leanNames": [],
+    "scope": "",
+    "source": "chapters/ch3/section9.tex",
+    "status": "analyticHeavy",
+    "title": "curvature obstructs path independence"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "lean:euler-lagrange-equations-from-curvature-action",
+    "leanNames": [],
+    "scope": "",
+    "source": "chapters/ch3/section10.tex",
+    "status": "analyticHeavy",
+    "title": "Euler--Lagrange equations from curvature action"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "lean:order-parameter-and-coarse-symmetry-deficit",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.parameterStabilizer_eq_top",
+      "SymmetryMonograph.Chapter3.parameterStabilizer_eq_bot",
+      "SymmetryMonograph.Chapter3.coarseSymmetryDeficit_eq_zero_iff",
+      "SymmetryMonograph.Chapter3.coarseSymmetryDeficit_eq_log_two_iff"
+    ],
+    "scope": "Exact two-slot parameter-exchange action; this is not relabeling the two blocks of a diagonal/off-diagonal density matrix.",
+    "source": "chapters/ch3/section11.tex",
+    "status": "complete",
+    "title": "order parameter and coarse symmetry deficit"
+  },
+  {
+    "category": "numbered",
+    "kind": "lemma",
+    "label": "lean:operations-are-functional-ternary-relations",
+    "leanNames": [
+      "SymmetryMonograph.Chapter4.opGraph_functional",
+      "SymmetryMonograph.Chapter4.functional_iff_exists_opGraph"
+    ],
+    "scope": "",
+    "source": "chapters/ch4/section1.tex",
+    "status": "complete",
+    "title": "operations are functional ternary relations"
+  },
+  {
+    "category": "numbered",
+    "kind": "lemma",
+    "label": "lean:operation-preservation-iff-graph-preservation",
+    "leanNames": [
+      "SymmetryMonograph.Chapter4.preservesOperation_iff_preserves_opGraph",
+      "SymmetryMonograph.RelationalModel.operationModel_aut_iff"
+    ],
+    "scope": "",
+    "source": "chapters/ch4/section2.tex",
+    "status": "complete",
+    "title": "operation preservation iff graph preservation"
+  },
+  {
+    "category": "numbered",
+    "kind": "lemma",
+    "label": "lean:automorphism-group-as-operation-table-stabilizer",
+    "leanNames": [
+      "SymmetryMonograph.Chapter4.alg_autSet_eq_stabilizer",
+      "SymmetryMonograph.Chapter4.AlgRelStructure.autSet_eq_model_aut"
+    ],
+    "scope": "A genuine relabeling action on indexed binary relations and ternary operation graphs.",
+    "source": "chapters/ch4/section2.tex",
+    "status": "complete",
+    "title": "automorphism group as operation-table stabilizer"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "lean:automorphisms-decrease-under-added-algebraic-data",
+    "leanNames": [
+      "SymmetryMonograph.Chapter4.alg_refinement_aut_subset",
+      "SymmetryMonograph.Chapter4.alg_refinement_aut_card_le"
+    ],
+    "scope": "",
+    "source": "chapters/ch4/section2.tex",
+    "status": "complete",
+    "title": "automorphisms decrease under added algebraic data"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "lean:algebraic-symmetry-deficit-bounds",
+    "leanNames": [
+      "SymmetryMonograph.Chapter4.alg_symmetryDeficit_nonneg",
+      "SymmetryMonograph.Chapter4.alg_symmetryDeficit_le_log_perm_card",
+      "SymmetryMonograph.Chapter4.alg_rigid_symmetryDeficit_eq_log_perm_card",
+      "SymmetryMonograph.Chapter4.alg_symmetryDeficit_eq_zero_iff_autSet_eq_univ",
+      "SymmetryMonograph.Chapter4.alg_symmetryDeficit_eq_max_iff_rigid"
+    ],
+    "scope": "Both extremal equality characterizations for the represented binary algebraic data.",
+    "source": "chapters/ch4/section3.tex",
+    "status": "complete",
+    "title": "algebraic symmetry-deficit bounds"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "lean:automorphism-group-of-z-has-order-2",
+    "leanNames": [
+      "SymmetryMonograph.Chapter5.int_additive_automorphism_card"
+    ],
+    "scope": "",
+    "source": "chapters/ch5/section2.tex",
+    "status": "complete",
+    "title": "automorphism group of (Z,+) has order 2"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "lean:unital-ring-of-integers-is-rigid",
+    "leanNames": [
+      "SymmetryMonograph.Chapter5.int_ring_automorphism_subsingleton",
+      "SymmetryMonograph.Chapter5.int_ring_automorphism_eq_refl"
+    ],
+    "scope": "",
+    "source": "chapters/ch5/section2.tex",
+    "status": "complete",
+    "title": "unital ring of integers is rigid"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "prop:real-field-automorphisms-trivial",
+    "leanNames": [
+      "SymmetryMonograph.Chapter5.real_ring_automorphism_monotone",
+      "SymmetryMonograph.Chapter5.real_field_automorphism_eq_refl",
+      "SymmetryMonograph.Chapter5.real_field_automorphism_subsingleton"
+    ],
+    "scope": "",
+    "source": "chapters/ch5/section2.tex",
+    "status": "complete",
+    "title": "prop:real-field-automorphisms-trivial"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "lean:finite-compatibility-of-infinite-symmetry-deficit-invariants",
+    "leanNames": [
+      "SymmetryMonograph.Chapter5.finite_extension_agrees_with_cardinality_formula"
+    ],
+    "scope": "Applies the finite compatibility assumption; no infinite invariant is constructed.",
+    "source": "chapters/ch5/section3.tex",
+    "status": "compatibilityCondition",
+    "title": "finite compatibility of infinite symmetry-deficit invariants"
+  },
+  {
+    "category": "numbered",
+    "kind": "lemma",
+    "label": "lem:reference-stabilizer-conjugate",
+    "leanNames": [
+      "SymmetryMonograph.Chapter6.reference_stabilizer_conjugate"
+    ],
+    "scope": "",
+    "source": "chapters/ch6/section1.tex",
+    "status": "complete",
+    "title": "lem:reference-stabilizer-conjugate"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "lean:reference-group-deficit-is-constant-on-g-orbits",
+    "leanNames": [
+      "SymmetryMonograph.Chapter6.residualSymmetry_index_smul",
+      "SymmetryMonograph.Chapter6.residualSymmetry_finiteIndex_smul",
+      "SymmetryMonograph.Chapter6.referenceGroupDeficit_orbit_invariant"
+    ],
+    "scope": "",
+    "source": "chapters/ch6/section1.tex",
+    "status": "complete",
+    "title": "reference-group deficit is constant on G-orbits"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "lean:monotonicity-at-fixed-reference-group",
+    "leanNames": [
+      "SymmetryMonograph.Chapter6.referenceSubgroupDeficit_antitone",
+      "SymmetryMonograph.Chapter6.referenceGroupDeficit_mono_of_residualSymmetry_le"
+    ],
+    "scope": "",
+    "source": "chapters/ch6/section2.tex",
+    "status": "complete",
+    "title": "Monotonicity at fixed reference group"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "lean:dimension-of-the-homogeneous-space-quotient",
+    "leanNames": [],
+    "scope": "",
+    "source": "chapters/ch6/section3.tex",
+    "status": "analyticHeavy",
+    "title": "dimension of the homogeneous-space quotient"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "prop:haar-subgroup-index",
+    "leanNames": [
+      "SymmetryMonograph.Chapter6.subgroup_measure_pos_iff_finiteIndex",
+      "SymmetryMonograph.Chapter6.subgroup_measure_eq_inv_index"
+    ],
+    "scope": "Measurable subgroups and normalized left-invariant probability; applies in particular to closed subgroups with normalized Haar measure.",
+    "source": "chapters/ch6/section4.tex",
+    "status": "complete",
+    "title": "prop:haar-subgroup-index"
+  },
+  {
+    "category": "numbered",
+    "kind": "proposition",
+    "label": "lean:nonnegativity-and-invariance-of-measure-symmetry-deficit",
+    "leanNames": [
+      "SymmetryMonograph.Chapter6.measureDeficit_integral_nonneg",
+      "SymmetryMonograph.Chapter6.measureDeficit_integral_eq_zero_iff",
+      "SymmetryMonograph.Chapter6.measureSymmetryDeficit_invariant"
+    ],
+    "scope": "Probability measures, absolute continuity and integrable log density for the real integral; action by measurable equivalences preserving the reference measure.",
+    "source": "chapters/ch6/section4.tex",
+    "status": "complete",
+    "title": "nonnegativity and invariance of measure symmetry deficit"
+  },
+  {
+    "category": "numbered",
+    "kind": "theorem",
+    "label": "thm:openai-hard-sphere-bec",
+    "leanNames": [],
+    "scope": "External cited condensation theorem; not formalized or assumed as a Lean axiom.",
+    "source": "chapters/ch6/section7.tex",
+    "status": "externallyCited",
+    "title": "thm:openai-hard-sphere-bec"
+  },
+  {
+    "category": "numbered",
+    "kind": "lemma",
+    "label": "lean:number-conserving-invariance",
+    "leanNames": [
+      "SymmetryMonograph.Chapter6.scalar_unitary_conjugation",
+      "SymmetryMonograph.Chapter6.number_conserving_invariance"
+    ],
+    "scope": "Every bounded operator on a complex Hilbert space is fixed by scalar-unitary conjugation, covering both fixed-N and one-particle operators. No condensation or partial-trace construction is asserted.",
+    "source": "chapters/ch6/section7.tex",
+    "status": "complete",
+    "title": "number-conserving invariance"
+  },
+  {
+    "category": "supplement",
+    "kind": "supplement",
+    "label": "",
+    "leanNames": [
+      "SymmetryMonograph.Chapter2.partitionMultiplicity_pos",
+      "SymmetryMonograph.Chapter2.gibbsWeight_pos",
+      "SymmetryMonograph.Chapter2.gibbs_weights_sum_one",
+      "SymmetryMonograph.RelationalModel.normalizedSymmetryDeficit_bounds"
+    ],
+    "scope": "Positive multiplicities and a nonempty finite ensemble imply normalization and positivity. Normalized deficit lies in [0,1] when the permutation count exceeds one; expectations and examples remain separate targets.",
+    "source": "chapters/ch2/section3.tex",
+    "status": "complete",
+    "title": "positive relational Gibbs weights"
+  },
+  {
+    "category": "supplement",
+    "kind": "supplement",
+    "label": "",
+    "leanNames": [
+      "SymmetryMonograph.Chapter3.blockProfile_fiber_card",
+      "SymmetryMonograph.Chapter3.directed_block_positions_card"
+    ],
+    "scope": "Independent directed relation positions, represented as disjoint block coordinates; product of binomial coefficients.",
+    "source": "chapters/ch3/section1.tex",
+    "status": "complete",
+    "title": "exact block-profile fiber count"
+  },
+  {
+    "category": "supplement",
+    "kind": "supplement",
+    "label": "",
+    "leanNames": [
+      "SymmetryMonograph.Chapter2.partition_regroup_by_fibers"
+    ],
+    "scope": "Exact finite fiber identity. Entropy and large-system approximations do not follow from this identity alone.",
+    "source": "chapters/ch3/section1.tex",
+    "status": "complete",
+    "title": "partition regrouping by profiles"
+  },
+  {
+    "category": "supplement",
+    "kind": "supplement",
+    "label": "",
+    "leanNames": [],
+    "scope": "Distinguished-point, arrow and cycle examples and the 104-class histogram require dedicated certified finite computations.",
+    "source": "chapters/ch1/section2.tex",
+    "status": "formalizableNow",
+    "title": "finite examples and 512-relation enumeration"
+  },
+  {
+    "category": "supplement",
+    "kind": "supplement",
+    "label": "",
+    "leanNames": [],
+    "scope": "Binomial entropy asymptotics, profile error estimates, a Laplace principle and step-kernel convergence remain open.",
+    "source": "chapters/ch3/section2.tex",
+    "status": "analyticHeavy",
+    "title": "profile entropy and continuum limit"
+  },
+  {
+    "category": "supplement",
+    "kind": "supplement",
+    "label": "",
+    "leanNames": [],
+    "scope": "Examples beyond the proved integer and real-field cases need separate representations and automorphism proofs.",
+    "source": "chapters/ch5/section2.tex",
+    "status": "needsDefinitions",
+    "title": "additional infinite algebraic examples"
+  },
+  {
+    "category": "supplement",
+    "kind": "supplement",
+    "label": "",
+    "leanNames": [],
+    "scope": "Normalization, self-consistency, threshold, KL formula and critical asymptotics are analytic proof targets distinct from simulation evidence.",
+    "source": "chapters/ch6/section5.tex",
+    "status": "analyticHeavy",
+    "title": "von Mises and Bessel analysis"
+  },
+  {
+    "category": "supplement",
+    "kind": "supplement",
+    "label": "",
+    "leanNames": [],
+    "scope": "Monte Carlo measurements and fitted errors are computational evidence; the analytic formulas are tracked separately.",
+    "source": "chapters/ch6/section5.tex",
+    "status": "computationalOnly",
+    "title": "finite-system numerical comparisons"
+  },
+  {
+    "category": "supplement",
+    "kind": "supplement",
+    "label": "",
+    "leanNames": [],
+    "scope": "Proposed diagnostics and universality comparisons are research hypotheses, not established formal theorems.",
+    "source": "chapters/app/appendixB.tex",
+    "status": "researchProgram",
+    "title": "structural susceptibility and scaling proposals"
+  }
+]

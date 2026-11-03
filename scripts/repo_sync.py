@@ -1,0 +1,45 @@
+"""Shared paths and content digests for the public/private review workflow."""
+import hashlib
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def digest(root, paths):
+    """Hash relative names and contents, independent of checkout location."""
+    result = hashlib.sha256()
+    for path in sorted(set(paths)):
+        result.update(path.relative_to(root).as_posix().encode() + b"\0")
+        result.update(hashlib.sha256(path.read_bytes()).digest())
+    return result.hexdigest()
+
+
+def public_digest(root=ROOT):
+    paths = [root / name for name in (
+        "AGENTS.md", "README.md", "README_computational.md", "SYNC.md",
+        "GITHUB_SETUP.md", "references.bib", "requirements.txt", "lakefile.toml",
+        "lake-manifest.json", "lean-toolchain", "SymmetryMonograph.lean")]
+    suffixes = {".lean", ".py", ".md", ".tex", ".csv", ".json", ".txt",
+                ".png", ".pdf", ".dot", ".svg", ".jpg", ".jpeg", ".webp"}
+    for directory in ("SymmetryMonograph", "lean", "doc", "src", "scripts", "results", "tests"):
+        paths.extend(path for path in (root / directory).rglob("*")
+                     if path.is_file() and path.suffix in suffixes)
+    paths.extend(path for path in (root / "slides").rglob("*")
+                 if path.is_file() and path.suffix in {".tex", ".md", ".sh"})
+    paths.append(root / "slides/Makefile")
+    paths.extend((root / ".github/workflows").glob("*.yml"))
+    return digest(root, paths)
+
+
+def book_root(path):
+    book = Path(path).resolve()
+    if book == ROOT or not (book / "main.tex").is_file():
+        raise ValueError(f"Expected a separate private manuscript checkout: {book}")
+    return book
+
+
+def book_digest(book):
+    paths = [book / name for name in ("main.tex", "macros.tex", "references.bib", "requirements.md")]
+    paths.extend((book / "chapters").rglob("*.tex"))
+    paths.extend((book / "doc").glob("*.md"))
+    return digest(book, paths)

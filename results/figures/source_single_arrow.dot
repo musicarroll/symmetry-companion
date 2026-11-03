@@ -1,0 +1,32 @@
+digraph source_single_arrow {
+  graph [
+    rankdir=TB,
+    splines=true,
+    nodesep=0.45,
+    ranksep=0.55,
+    pad=0.15
+  ];
+  node [
+    shape=circle,
+    width=0.36,
+    fixedsize=true,
+    fontsize=12
+  ];
+  edge [
+    arrowsize=0.8,
+    penwidth=1.2
+  ];
+
+  subgraph cluster_source {
+    label="source relation: R = {(1,2)}";
+    fontsize=13;
+    style=rounded;
+    color="#666666";
+    s1 [label="1"];
+    s2 [label="2"];
+    s3 [label="3"];
+    { rank=same; s1; }
+    { rank=same; s2; s3; }
+    s1 -> s2;
+  }
+}

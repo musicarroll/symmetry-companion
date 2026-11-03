@@ -1,0 +1,21 @@
+name: Lean Action CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: leanprover/lean-action@v1
+      - name: Check exported inventory, declaration names, and theorem axioms
+        run: python3 scripts/check_lean_coverage.py
+      - name: Check repository boundaries and synchronization tools
+        run: python3 -m unittest discover -s tests

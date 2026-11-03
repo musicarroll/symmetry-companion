@@ -1,0 +1,102 @@
+\section{Thesis and scope}
+
+\begin{frame}{The organizing question}
+  \bookref{Introduction}
+  \begin{block}{Can symmetry loss itself be the structural observable?}
+    For a configuration or mathematical structure, measure not only a chosen
+    order parameter, but the symmetry that survives the imposed relations.
+  \end{block}
+
+  \vspace{0.4em}
+  \begin{center}
+    \begin{tikzpicture}[node distance=1.35cm,>=Latex]
+      \node[draw,rounded corners,fill=RelBlue!8,minimum width=2.5cm,
+        minimum height=0.8cm] (set) {bare set $X$};
+      \node[draw,rounded corners,fill=RelGold!12,right=of set,
+        minimum width=2.8cm,minimum height=0.8cm] (rel) {relations / operations};
+      \node[draw,rounded corners,fill=RelTeal!10,right=of rel,
+        minimum width=2.7cm,minimum height=0.8cm] (aut) {residual $\Aut(S)$};
+      \draw[->,thick] (set) -- node[above,font=\small]{impose structure} (rel);
+      \draw[->,thick] (rel) -- node[above,font=\small]{preserve} (aut);
+    \end{tikzpicture}
+  \end{center}
+
+  \begin{alertblock}{Guiding principle}
+    Structure is read as a reduction from available relabeling symmetry to
+    residual automorphism symmetry.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{One program, four levels of evidence}
+  \bookref{Introduction; Chapters 1--6; Appendices}
+  \begin{enumerate}
+    \item \evidence{Exact finite theory:} automorphism groups, orbit sizes,
+      refinement, and finite relational/algebraic ensembles.
+    \item \evidence{Exact model analysis:} a contrast-sensitive two-block free
+      energy, its Hessian, and its fourth-order Landau jet.
+    \item \evidence{Numerical evidence:} mean-field, finite relational, Monte
+      Carlo, and spatial lattice experiments.
+    \item \evidence{Prospective extensions:} Goldstone sectors, connections,
+      curvature, renormalization, and infinite automorphism groups.
+  \end{enumerate}
+
+  \vspace{0.5em}
+  \begin{block}{Claim discipline}
+    The first two levels contain theorems. The third is empirical. The fourth
+    supplies mathematically motivated frameworks and open problems, not a
+    derivation of gauge theory or a universal infinite invariant.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Physical systems and three roles for infinity}
+  \bookref{Introduction; Chapter 5, Section 1; Chapter 6, Sections 1 and 5}
+  \begin{itemize}
+    \item \textbf{Finite size, continuous variables:}
+      $N$ Ising spins have $2^N$ configurations; $N$ classical rotors have
+      configuration space $(S^1)^N$ and continuous global rotations.
+    \item \textbf{Thermodynamic limit:}
+      growing systems can develop sharp transitions; finite-state canonical
+      systems with fixed finite energies have analytic free energies for $T>0$.
+    \item \textbf{Abstract infinite algebra:}
+      a mathematical extension whose physical role depends on the model.
+  \end{itemize}
+  \begin{block}{Physical reading path}
+    Chapters 1--3 $\to$ Section 5.1 (signature, regularity, cardinal ratios)
+    $\to$ Chapter 6. Chapter 4 and Sections 5.2--5.4 supply optional algebraic
+    background as needed.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Narrative arc}
+  \bookref{Chapters 1--6}
+  \begin{center}
+    \begin{tikzpicture}[
+      box/.style={draw,rounded corners,align=center,minimum width=2.0cm,
+        minimum height=0.8cm,fill=RelBlue!7},
+      arrow/.style={-{Latex[length=2.2mm]},thick},node distance=0.55cm]
+      \node[box] (finite) {finite\\structures};
+      \node[box,right=of finite] (ens) {relational\\ensembles};
+      \node[box,right=of ens] (mf) {mean field\\and limits};
+      \node[box,right=of mf] (geo) {continuous\\geometry};
+      \node[box,right=of geo] (inf) {reference-group\\extensions};
+      \draw[arrow] (finite)--(ens);
+      \draw[arrow] (ens)--(mf);
+      \draw[arrow] (mf)--(geo);
+      \draw[arrow] (geo)--(inf);
+    \end{tikzpicture}
+  \end{center}
+
+  \vspace{1em}
+  \begin{columns}[T]
+    \column{0.49\textwidth}
+      \textbf{Invariant carried forward}
+      \[
+        \text{available symmetry}\;/\;\text{preserved symmetry}.
+      \]
+    \column{0.49\textwidth}
+      \textbf{What changes}
+
+      Counting $\to$ entropy density $\to$ dimension, measure, or asymptotic
+      rate.
+  \end{columns}
+\end{frame}

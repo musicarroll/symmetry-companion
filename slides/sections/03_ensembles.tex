@@ -1,0 +1,83 @@
+\section{Relational ensembles}
+
+\begin{frame}{The relational partition function}
+  \bookref{Chapter 2, Section 1}
+  Let $E(S)$ be isomorphism-invariant. Summing over isomorphism classes,
+  \[
+    \boxed{
+      Z(\beta)=\sum_{[S]}
+      \frac{n!}{|\Aut(S)|}e^{-\beta E(S)}
+      =\sum_{[S]}e^{I(S)-\beta E(S)}.}
+  \]
+
+  The induced Gibbs law is
+  \[
+    \mathbb P_\beta([S])
+      =\frac{e^{I(S)-\beta E(S)}}{Z(\beta)}.
+  \]
+
+  \begin{block}{Interpretation}
+    Energy weights structures; each orbit counts labeled realizations.
+    $X$ labels entities; configurations are structures on $X$.
+  \end{block}
+  Physical use requires distinct admissible configurations. Identify redundant
+  labels first and specify the background-preserving reference action.
+\end{frame}
+
+\begin{frame}{Energy--multiplicity competition}
+  \bookref{Chapter 2, Sections 1, 2, and 5}
+  \begin{columns}[T]
+    \column{0.48\textwidth}
+      \begin{block}{Highly symmetric type}
+        \begin{itemize}
+          \item large $|\Aut(S)|$,
+          \item small $I(S)$,
+          \item few labeled realizations.
+        \end{itemize}
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{Rigid type}
+        \begin{itemize}
+          \item $|\Aut(S)|=1$,
+          \item $I(S)=\log(n!)$,
+          \item a full orbit of $n!$ realizations.
+        \end{itemize}
+      \end{block}
+  \end{columns}
+
+  \vspace{0.5em}
+  For singleton relations on three points, a rewarded loop contributes
+  $3e^{\beta\varepsilon}$ while a directed edge contributes $6$. Thus the loop
+  wins exactly when $\beta\varepsilon>\log 2$.
+
+  \begin{alertblock}{Not thermodynamic entropy by definition}
+    $I(S)$ is an orbit-counting entropy-like term. Its physical meaning depends
+    on the ensemble and on which labels represent genuine microstates.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Why asymmetry is statistically relevant}
+  \bookref{Chapter 2, Section 2}
+  In the classical uniform ensemble of undirected graphs, Erd\H{o}s and
+  R\'enyi proved that almost all large graphs are asymmetric
+  \cite{erdosrenyi1963}.
+
+  \vspace{0.5em}
+  \begin{center}
+    \begin{tikzpicture}[>=Latex]
+      \draw[->,very thick] (0,0)--(9,0);
+      \node[below] at (0,0) {large automorphism group};
+      \node[below] at (9,0) {rigid};
+      \foreach \x in {0.6,1.7,3.0,4.4,5.9,7.1,7.8,8.3,8.65,8.85}
+        \fill[RelBlue] (\x,0.13) circle (2.2pt);
+      \node[above,align=center] at (7.5,0.45)
+        {generic mass of many\\classical graph ensembles};
+    \end{tikzpicture}
+  \end{center}
+
+  \begin{block}{Scope of the precedent}
+    It supports the importance of rigid orbit types, but it is not a theorem
+    about every relational ensemble, every energy, or law-constrained algebraic
+    structures.
+  \end{block}
+\end{frame}

@@ -1,0 +1,44 @@
+\usetheme{Madrid}
+\usecolortheme{dove}
+
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\definecolor{RelBlue}{RGB}{31,78,121}
+\definecolor{RelTeal}{RGB}{0,121,107}
+\definecolor{RelGold}{RGB}{181,125,18}
+\definecolor{RelRed}{RGB}{166,49,53}
+\definecolor{RelGray}{RGB}{75,85,99}
+
+\setbeamercolor{structure}{fg=RelBlue}
+\setbeamercolor{title}{fg=white,bg=RelBlue}
+\setbeamercolor{frametitle}{fg=white,bg=RelBlue}
+\setbeamercolor{block title}{fg=white,bg=RelBlue}
+\setbeamercolor{block body}{bg=RelBlue!6}
+\setbeamercolor{alerted text}{fg=RelRed}
+\setbeamercolor{example text}{fg=RelTeal}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{bibliography item}[text]
+\setbeamertemplate{caption}[numbered]
+\setbeamersize{text margin left=0.65cm,text margin right=0.65cm}
+
+\graphicspath{{../results/figures/}}
+
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Stab}{\operatorname{Stab}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\bookref}[1]{\framesubtitle{Monograph source: #1}}
+\newcommand{\evidence}[1]{\textcolor{RelTeal}{\textbf{#1}}}
+\newcommand{\limitation}[1]{\textcolor{RelRed}{\textbf{#1}}}
+\pdfstringdefDisableCommands{\def\translate#1{#1}}
+
+\AtBeginSection[]{
+  \begin{frame}{Roadmap}
+    \small
+    \tableofcontents[currentsection,hideothersubsections]
+  \end{frame}
+}

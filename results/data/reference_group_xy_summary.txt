@@ -1,0 +1,12 @@
+Reference-Group Mean-Field XY Summary
+Predicted beta_c = 2.000000
+System sizes = [64, 256]
+Replicas per point = 4
+Predicted r(beta=3) = 0.724159
+Measured r(beta=3, N=256) = 0.723995
+Predicted measure deficit(beta=3) = 0.626545
+Measured measure deficit(beta=3, N=256) = 0.626140
+Ordered-phase order RMSE = 0.020487
+Ordered-phase measure-deficit RMSE = 0.017386
+
+Finite-size Metropolis measurements approach the selected-phase mean-field branch above beta_c. Below beta_c, alignment of finite magnetization fluctuations creates a positive finite-N bias that decreases with system size.

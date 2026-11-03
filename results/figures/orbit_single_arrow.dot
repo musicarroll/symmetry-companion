@@ -1,0 +1,104 @@
+digraph orbit_single_arrow {
+  graph [
+    rankdir=TB,
+    splines=true,
+    nodesep=0.55,
+    ranksep=0.9,
+    pad=0.15
+  ];
+  node [
+    shape=circle,
+    width=0.34,
+    fixedsize=true,
+    fontsize=12
+  ];
+  edge [
+    arrowsize=0.8,
+    penwidth=1.2
+  ];
+
+  label="orbit of R under relabeling by S_3";
+  labelloc=t;
+  fontsize=13;
+
+  subgraph cluster_a {
+    label="";
+    style=rounded;
+    color="#888888";
+    pencolor="#888888";
+    a1 [label="1"];
+    a2 [label="2"];
+    a3 [label="3"];
+    { rank=same; a1; }
+    { rank=same; a2; a3; }
+    a1 -> a2;
+  }
+
+  subgraph cluster_b {
+    label="";
+    style=rounded;
+    color="#888888";
+    pencolor="#888888";
+    b1 [label="1"];
+    b2 [label="2"];
+    b3 [label="3"];
+    { rank=same; b1; }
+    { rank=same; b2; b3; }
+    b1 -> b3;
+  }
+
+  subgraph cluster_c {
+    label="";
+    style=rounded;
+    color="#888888";
+    pencolor="#888888";
+    c1 [label="1"];
+    c2 [label="2"];
+    c3 [label="3"];
+    { rank=same; c1; }
+    { rank=same; c2; c3; }
+    c2 -> c1;
+  }
+
+  subgraph cluster_d {
+    label="";
+    style=rounded;
+    color="#888888";
+    pencolor="#888888";
+    d1 [label="1"];
+    d2 [label="2"];
+    d3 [label="3"];
+    { rank=same; d1; }
+    { rank=same; d2; d3; }
+    d2 -> d3;
+  }
+
+  subgraph cluster_e {
+    label="";
+    style=rounded;
+    color="#888888";
+    pencolor="#888888";
+    e1 [label="1"];
+    e2 [label="2"];
+    e3 [label="3"];
+    { rank=same; e1; }
+    { rank=same; e2; e3; }
+    e3 -> e1;
+  }
+
+  subgraph cluster_f {
+    label="";
+    style=rounded;
+    color="#888888";
+    pencolor="#888888";
+    f1 [label="1"];
+    f2 [label="2"];
+    f3 [label="3"];
+    { rank=same; f1; }
+    { rank=same; f2; f3; }
+    f3 -> f2;
+  }
+
+  { rank=same; a1; b1; c1; }
+  { rank=same; d1; e1; f1; }
+}

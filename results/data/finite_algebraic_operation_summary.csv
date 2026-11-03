@@ -1,0 +1,3 @@
+n,total_operations,rigid,associative,commutative,has_identity,is_group,aut_distribution
+2,16,12,8,8,4,2,"{""1"": 12, ""2"": 4}"
+3,19683,19422,113,729,243,3,"{""1"": 19422, ""2"": 234, ""3"": 24, ""6"": 3}"

@@ -1,0 +1,137 @@
+\section{Continuum and relational geometry}
+
+\begin{frame}{From blocks to kernels}
+  \bookref{Chapter 3, Section 2}
+  A $k$-block density matrix determines a step function
+  \[
+    \rho_k:[0,1]^2\to[0,1].
+  \]
+  As the partition is refined, this motivates a measurable continuum profile
+  and a functional
+  \[
+    \mathcal F_\beta[\rho]
+      =\beta\Phi[\rho]
+       -\int_0^1\!\int_0^1 h(\rho(x,y))\,dx\,dy.
+  \]
+
+  \begin{definition}
+    An undirected graphon is a symmetric measurable
+    $W:[0,1]^2\to[0,1]$ \cite{lovaszszegedy2006}.
+  \end{definition}
+
+  Directed relational kernels need not satisfy $W(x,y)=W(y,x)$. Dense graph
+  limits therefore supply a rigorous neighboring theory, but not every kernel
+  model is an undirected graphon model.
+\end{frame}
+
+\begin{frame}{Continuous symmetry breaking}
+  \bookref{Chapter 3, Sections 6--7}
+  \small
+  Consider a differentiable $O(m)$-invariant order-parameter field, $m\geq1$,
+  \[
+    \mathcal F[\phi]
+      =\int_\Omega
+      \left(\frac\kappa2|\nabla\phi|^2+a|\phi|^2+b|\phi|^4\right)dx,
+      \qquad b,\kappa>0.
+  \]
+  For $a<0$, constant minima satisfy
+  \[
+    |\phi|=v=\sqrt{\frac{-a}{2b}},
+    \qquad
+    O(m)\longrightarrow O(m-1),
+  \]
+  and the vacuum manifold is
+  \[
+    O(m)/O(m-1)\cong S^{m-1}.
+  \]
+
+  In the constrained vacuum model with $m=2$, writing
+  $\phi=v(\cos\theta,\sin\theta)$ gives
+  \[
+    \Delta\mathcal F=\frac{\kappa v^2}{2}\int_\Omega|\nabla\theta|^2dx.
+  \]
+  Uniform rotations are free, and long-wavelength twists are arbitrarily soft.
+
+  Expanding about one vacuum gives one massive radial fluctuation and $m-1$
+  transverse directions with no quadratic potential term—the variational
+  analogue of Goldstone modes \cite{goldstone1962}.
+\end{frame}
+
+\begin{frame}{Connections encode relational comparison}
+  \bookref{Chapter 3, Sections 8--9}
+  Once local ordered states take values in $G/H$, direct subtraction at
+  different points is not canonical. Introduce
+  \[
+    A\in\Omega^1(\Omega,\mathfrak g),
+    \qquad
+    D=d+A,
+  \]
+  as an infinitesimal rule for comparing local orientations.
+
+  Its curvature is
+  \[
+    F=dA+A\wedge A,
+    \qquad
+    [D_i,D_j]\phi=F_{ij}\cdot\phi.
+  \]
+
+  \begin{center}
+    \begin{tikzpicture}[>=Latex,node distance=1.25cm]
+      \node[draw,circle,fill=RelBlue!8] (x) {$x$};
+      \node[draw,circle,fill=RelBlue!8,right=3.3cm of x] (y) {$y$};
+      \draw[->,thick,bend left=28] (x) to node[above] {$\gamma_1$} (y);
+      \draw[->,thick,bend right=28] (x) to node[below] {$\gamma_2$} (y);
+      \node[right=0.5cm of y,align=left] {infinitesimal path discrepancy\\detected by curvature};
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Curvature dynamics}
+  \bookref{Chapter 3, Section 10}
+  Given an invariant inner product on $\mathfrak g$ and a background Hodge
+  star, define
+  \[
+    S[A]=\int_\Omega\operatorname{Tr}(F\wedge *F).
+  \]
+  Compactly supported smooth variations of a smooth connection yield
+  \[
+    \delta F=D(\delta A),
+    \qquad
+    \boxed{D*F=0.}
+  \]
+
+  For $G=U(1)$ this reduces to the source-free Maxwell equation $d*F=0$;
+  for nonabelian $G$ it has Yang--Mills form \cite{yangmills1954}.
+
+  \begin{alertblock}{Interpretive status}
+    Standard connection--curvature mathematics is being given a relational
+    reading. The book does not derive Yang--Mills theory from the finite formula
+    $I(S)=\log(n!/|\Aut(S)|)$.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Where the continuum program stands}
+  \bookref{Chapter 3, Sections 6--12}
+  \begin{center}
+    \begin{tikzpicture}[
+      box/.style={draw,rounded corners,align=center,minimum width=2.25cm,
+        minimum height=0.75cm},>=Latex,node distance=0.6cm]
+      \node[box,fill=RelTeal!10] (done) {derived in explicit\\models};
+      \node[box,fill=RelGold!12,right=of done] (interp) {geometric\\reinterpretation};
+      \node[box,fill=RelRed!8,right=of interp] (open) {open unifying\\theory};
+      \draw[->,thick] (done)--(interp);
+      \draw[->,thick] (interp)--(open);
+    \end{tikzpicture}
+  \end{center}
+
+  \begin{columns}[T]
+    \column{0.32\textwidth}
+      \small Block variational calculus; Hessian; Landau jet; $O(m)$ model.
+    \column{0.32\textwidth}
+      \small Local orientations as $G/H$ fields; connections as comparison;
+      curvature as obstruction.
+    \column{0.32\textwidth}
+      \small Derive continuum geometry from microscopic ensembles; construct an
+      RG flow; relate $I$ to Fisher--Rao geometry.
+  \end{columns}
+\end{frame}

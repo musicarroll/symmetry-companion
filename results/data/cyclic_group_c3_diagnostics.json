@@ -1,0 +1,33 @@
+{
+  "n": 3,
+  "operation": [
+    0,
+    1,
+    2,
+    1,
+    2,
+    0,
+    2,
+    0,
+    1
+  ],
+  "automorphisms": [
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      2,
+      1
+    ]
+  ],
+  "aut_size": 2,
+  "multiplicity": 3,
+  "symmetry_deficit": 1.0986122886681098,
+  "associative": true,
+  "commutative": true,
+  "has_identity": true,
+  "is_group": true
+}

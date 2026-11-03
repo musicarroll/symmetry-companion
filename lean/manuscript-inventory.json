@@ -1,0 +1,230 @@
+{
+  "lean:algebraic-symmetry-deficit-bounds": [
+    "chapters/ch4/section3.tex",
+    "proposition"
+  ],
+  "lean:automorphism-group-as-operation-table-stabilizer": [
+    "chapters/ch4/section2.tex",
+    "lemma"
+  ],
+  "lean:automorphism-group-of-z-has-order-2": [
+    "chapters/ch5/section2.tex",
+    "proposition"
+  ],
+  "lean:automorphism-group-under-refinement": [
+    "chapters/ch1/section3.tex",
+    "lemma"
+  ],
+  "lean:automorphisms-decrease-under-added-algebraic-data": [
+    "chapters/ch4/section2.tex",
+    "proposition"
+  ],
+  "lean:complement-and-converse-preserve-symmetry-deficit": [
+    "chapters/ch1/section4.tex",
+    "theorem"
+  ],
+  "lean:connection-supplies-covariant-infinitesimal-comparison": [
+    "chapters/ch3/section8.tex",
+    "proposition"
+  ],
+  "lean:continuum-euler-lagrange-equation": [
+    "chapters/ch3/section3.tex",
+    "theorem"
+  ],
+  "lean:curvature-obstructs-path-independence": [
+    "chapters/ch3/section9.tex",
+    "proposition"
+  ],
+  "lean:diagonal-branch-of-two-block-system": [
+    "chapters/ch3/section4.tex",
+    "lemma"
+  ],
+  "lean:dimension-of-the-homogeneous-space-quotient": [
+    "chapters/ch6/section3.tex",
+    "proposition"
+  ],
+  "lean:euler-lagrange-equations-from-curvature-action": [
+    "chapters/ch3/section10.tex",
+    "proposition"
+  ],
+  "lean:finite-compatibility-of-infinite-symmetry-deficit-invariants": [
+    "chapters/ch5/section3.tex",
+    "proposition"
+  ],
+  "lean:k-block-euler-lagrange-equations": [
+    "chapters/ch3/section3.tex",
+    "theorem"
+  ],
+  "lean:minima-of-radial-quartic-potential": [
+    "chapters/ch3/section6.tex",
+    "proposition"
+  ],
+  "lean:monotonicity-at-fixed-reference-group": [
+    "chapters/ch6/section2.tex",
+    "proposition"
+  ],
+  "lean:nonnegativity-and-invariance-of-measure-symmetry-deficit": [
+    "chapters/ch6/section4.tex",
+    "proposition"
+  ],
+  "lean:number-conserving-invariance": [
+    "chapters/ch6/section7.tex",
+    "lemma"
+  ],
+  "lean:o-m-invariance-of-continuum-functional": [
+    "chapters/ch3/section6.tex",
+    "lemma"
+  ],
+  "lean:o-m-to-o-m-1-breaking-pattern": [
+    "chapters/ch3/section6.tex",
+    "theorem"
+  ],
+  "lean:operation-preservation-iff-graph-preservation": [
+    "chapters/ch4/section2.tex",
+    "lemma"
+  ],
+  "lean:operations-are-functional-ternary-relations": [
+    "chapters/ch4/section1.tex",
+    "lemma"
+  ],
+  "lean:order-parameter-and-coarse-symmetry-deficit": [
+    "chapters/ch3/section11.tex",
+    "proposition"
+  ],
+  "lean:quadratic-expansion-around-chosen-vacuum": [
+    "chapters/ch3/section6.tex",
+    "proposition"
+  ],
+  "lean:reference-group-deficit-is-constant-on-g-orbits": [
+    "chapters/ch6/section1.tex",
+    "proposition"
+  ],
+  "lean:refined-two-block-critical-instability": [
+    "chapters/ch3/section4.tex",
+    "theorem"
+  ],
+  "lean:refined-two-block-first-derivatives": [
+    "chapters/ch3/section4.tex",
+    "lemma"
+  ],
+  "lean:refined-two-block-hessian": [
+    "chapters/ch3/section4.tex",
+    "theorem"
+  ],
+  "lean:refined-two-block-hessian-eigenmodes": [
+    "chapters/ch3/section4.tex",
+    "theorem"
+  ],
+  "lean:refined-two-block-symmetric-branch": [
+    "chapters/ch3/section4.tex",
+    "theorem"
+  ],
+  "lean:relational-low-energy-fields": [
+    "chapters/ch3/section7.tex",
+    "proposition"
+  ],
+  "lean:second-variation-of-homogeneous-phase": [
+    "chapters/ch3/section3.tex",
+    "theorem"
+  ],
+  "lean:symmetry-deficit-monotonicity-under-refinement": [
+    "chapters/ch1/section3.tex",
+    "theorem"
+  ],
+  "lean:two-block-euler-lagrange-equations": [
+    "chapters/ch3/section4.tex",
+    "theorem"
+  ],
+  "lean:two-block-hessian-and-modes": [
+    "chapters/ch3/section4.tex",
+    "theorem"
+  ],
+  "lean:unital-ring-of-integers-is-rigid": [
+    "chapters/ch5/section2.tex",
+    "proposition"
+  ],
+  "lean:unrefined-curvature-threshold-at-the-half-point": [
+    "chapters/ch3/section4.tex",
+    "theorem"
+  ],
+  "lem:aut-inherited-by-ops": [
+    "chapters/ch1/section4.tex",
+    "lemma"
+  ],
+  "lem:aut-size-bound": [
+    "chapters/ch1/section1.tex",
+    "lemma"
+  ],
+  "lem:binary-entropy-derivatives": [
+    "chapters/ch3/section5.tex",
+    "lemma"
+  ],
+  "lem:labeled-realizations-orbit-stabilizer": [
+    "chapters/ch2/section4.tex",
+    "lemma"
+  ],
+  "lem:reference-stabilizer-conjugate": [
+    "chapters/ch6/section1.tex",
+    "lemma"
+  ],
+  "lem:relation-ops-equivariant": [
+    "chapters/ch1/section4.tex",
+    "lemma"
+  ],
+  "lem:symmetry-entropy-additive-under-multiplicativity": [
+    "chapters/ch2/section5.tex",
+    "lemma"
+  ],
+  "prop:haar-subgroup-index": [
+    "chapters/ch6/section4.tex",
+    "proposition"
+  ],
+  "prop:invariant-operand-bounds": [
+    "chapters/ch1/section4.tex",
+    "proposition"
+  ],
+  "prop:landau-local-form": [
+    "chapters/ch3/section5.tex",
+    "proposition"
+  ],
+  "prop:real-field-automorphisms-trivial": [
+    "chapters/ch5/section2.tex",
+    "proposition"
+  ],
+  "prop:separate-relations-intersection": [
+    "chapters/ch1/section4.tex",
+    "proposition"
+  ],
+  "prop:stirling-maximal-symmetry-deficit-growth": [
+    "chapters/ch2/section5.tex",
+    "proposition"
+  ],
+  "thm:exact-broken-branch-asymptotic": [
+    "chapters/ch3/section5.tex",
+    "theorem"
+  ],
+  "thm:exact-broken-stationary-pair": [
+    "chapters/ch3/section5.tex",
+    "theorem"
+  ],
+  "thm:landau-expansion-symmetric": [
+    "chapters/ch3/section5.tex",
+    "theorem"
+  ],
+  "thm:landau-quartic-minimizers": [
+    "chapters/ch3/section5.tex",
+    "theorem"
+  ],
+  "thm:openai-hard-sphere-bec": [
+    "chapters/ch6/section7.tex",
+    "theorem"
+  ],
+  "thm:symmetry-deficit-basic-bounds": [
+    "chapters/ch1/section2.tex",
+    "theorem"
+  ],
+  "thm:two-block-hessian-stability": [
+    "chapters/ch3/section4.tex",
+    "theorem"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "model": "mean-field XY with global SO(2) reference symmetry",
+  "coupling": 1.0,
+  "predicted_beta_c": 2.0,
+  "system_sizes": [
+    64,
+    256
+  ],
+  "betas": [
+    1.0,
+    1.5,
+    1.8,
+    2.0,
+    2.1,
+    2.25,
+    2.5,
+    3.0,
+    3.5,
+    4.0
+  ],
+  "replicas": 4,
+  "burn_in_sweeps": 300,
+  "measurement_sweeps": 500,
+  "sample_every_sweeps": 5,
+  "histogram_bins": 48,
+  "seed": 20261003,
+  "ordered_comparison_beta": 3.0,
+  "largest_n": 256,
+  "predicted_order_at_beta_3": 0.7241587176263529,
+  "measured_order_at_beta_3": 0.7239950049516218,
+  "predicted_measure_deficit_at_beta_3": 0.626544770906688,
+  "measured_measure_deficit_at_beta_3": 0.626139732503176,
+  "ordered_phase_order_rmse_all_sizes": 0.02048673927352512,
+  "ordered_phase_measure_deficit_rmse_all_sizes": 0.01738615572308166,
+  "interpretation": "Finite-size Metropolis measurements approach the selected-phase mean-field branch above beta_c. Below beta_c, alignment of finite magnetization fluctuations creates a positive finite-N bias that decreases with system size."
+}

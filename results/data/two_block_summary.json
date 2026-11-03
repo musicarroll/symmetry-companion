@@ -1,0 +1,21 @@
+{
+  "J": 1.0,
+  "predicted_beta_c": 2.0,
+  "beta_c_numerical": 2.005,
+  "detected_beta_for_nonzero_Delta": 2.005,
+  "detected_beta_for_nonzero_symmetry_deficit": 2.005,
+  "detected_beta_for_lambda_asym_sign_change": 2.005,
+  "Delta_onset_minus_beta_c": 0.004999999999999893,
+  "symmetry_deficit_onset_minus_beta_c": 0.004999999999999893,
+  "critical_exponent_estimate": 0.9711187638636498,
+  "critical_scaling_intercept": 0.2682167115728617,
+  "critical_scaling_rms_error": 0.008459237515092465,
+  "critical_scaling_points_used": 19,
+  "delta_check": "The onset of nonzero Delta is numerically close to the predicted critical threshold.",
+  "symmetry_deficit_check": "The onset of nonzero symmetry deficit is numerically close to the predicted critical threshold.",
+  "lambda_check": "The antisymmetric symmetric-point curvature changes sign near the predicted threshold.",
+  "scaling_check": "The symmetry-deficit scaling exponent is consistent with the mean-field expectation alpha \u2248 1.",
+  "alignment_warning": null,
+  "scaling_warning": null,
+  "overall_assessment": "The local Hessian/Landau threshold agrees with beta_c = 2/J, and in this refined two-block model the explicit symmetry deficit behaves as the primary symmetry-based observable while Delta serves as its reduced proxy. Its near-threshold scaling is also consistent with the mean-field expectation that symmetry deficit is quadratic in the order parameter."
+}
