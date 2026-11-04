@@ -17,7 +17,8 @@ def digest(root, paths):
 def public_digest(root=ROOT):
     paths = [root / name for name in (
         "AGENTS.md", "README.md", "README_computational.md", "SYNC.md",
-        "GITHUB_SETUP.md", "references.bib", "requirements.txt", "lakefile.toml",
+        "GITHUB_SETUP.md", "references.bib", "requirements.txt", "requirements-publication.txt",
+        "VERSION", "CHANGELOG.md", "lakefile.toml",
         "lake-manifest.json", "lean-toolchain", "SymmetryMonograph.lean")]
     suffixes = {".lean", ".py", ".md", ".tex", ".csv", ".json", ".txt",
                 ".png", ".pdf", ".dot", ".svg", ".jpg", ".jpeg", ".webp"}
@@ -39,7 +40,10 @@ def book_root(path):
 
 
 def book_digest(book):
-    paths = [book / name for name in ("main.tex", "macros.tex", "references.bib", "requirements.md")]
+    paths = [book / name for name in ("main.tex", "macros.tex", "references.bib", "requirements.md",
+                                     "VERSION", "COMPANION_VERSION")]
     paths.extend((book / "chapters").rglob("*.tex"))
     paths.extend((book / "doc").glob("*.md"))
+    paths.extend(path for path in (book / "publishing").rglob("*")
+                 if path.is_file() and path.suffix in {".tex", ".cfg", ".mk4", ".css", ".json"})
     return digest(book, paths)

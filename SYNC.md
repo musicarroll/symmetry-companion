@@ -11,6 +11,11 @@ Physics/
 They have independent histories and remotes. Public builds and CI never require
 access to the private repository. There is no submodule or symlink between them.
 
+Each repository records its own `VERSION` and `CHANGELOG.md`, with annotated
+version tags named `vMAJOR.MINOR.PATCH`. The book's `COMPANION_VERSION` pins its
+chosen public release. Run `scripts/check_versions.py --book PATH` when preparing
+a paired update; add `--require-tag` when validating final release commits.
+
 ## Ownership
 
 | Material | Authority | Other checkout |

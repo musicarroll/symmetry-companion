@@ -33,6 +33,10 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\bookref}[1]{\framesubtitle{Monograph source: #1}}
 \newcommand{\evidence}[1]{\textcolor{RelTeal}{\textbf{#1}}}
+\newread\companionversionstream
+\openin\companionversionstream=../VERSION
+\begingroup\endlinechar=-1\global\read\companionversionstream to\CompanionVersion\endgroup
+\closein\companionversionstream
 \newcommand{\limitation}[1]{\textcolor{RelRed}{\textbf{#1}}}
 \pdfstringdefDisableCommands{\def\translate#1{#1}}
 

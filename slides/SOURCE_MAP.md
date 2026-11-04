@@ -8,6 +8,7 @@ page numbers are deliberately omitted because the book is still evolving.
 | Slide topic | Primary monograph source | Other dependency |
 |---|---|---|
 | Central thesis; evidence levels | Introduction; chapter summaries | private `requirements.md` |
+| Public companion materials | Companion Materials front matter; chapter-specific file pointers; Appendices A--D | Public repository URL, Python and Lean guides, recorded outputs |
 | Physical systems and three roles for infinity; selective physical reading path | Introduction; Chapter 5, Section 1; Chapter 6, Sections 1 and 5 | Finite size, continuous variables, and thermodynamic limits distinguished |
 | Finite structures and symmetry deficit | Chapter 1, Sections 1--3 | `FiniteRelationalStructures.lean`; arbitrary indexed signatures and relabeling in `Relabeling.lean` |
 | Orbit size and single-arrow example | Chapter 1, Section 2 | `orbit_single_arrow.pdf` |
@@ -58,3 +59,18 @@ table; the statement inventory contains identifiers and source locations only.
 The book's mathematical content, numerical measurements, and proof scopes are
 unchanged. Existing frames were reviewed against the private manuscript and
 remain consistent. The public build requires no private chapter files.
+
+Reader-access review (4 November 2026): the book now names the public GitHub
+address in a dedicated front-matter guide, the introduction, and all appendices,
+with links to the relevant Python and Lean files in every chapter. The new
+public-companion frame mirrors that guide. Existing mathematical, numerical,
+and coverage frames were reviewed and remain consistent; no results, proof
+statuses, or ledger counts changed.
+
+Publication/version review (4 November 2026): book proof 0.1.0 cites companion
+release v0.1.0, and the deck title page identifies its companion version. The
+book uses the same chapter sources for a 7 × 10 paperback and a native MathML
+EPUB. Print panels and label sizes are adapted from the same recorded data;
+the source mathematical claims and measurements are unchanged. Existing
+mathematical and coverage frames remain consistent. The overline in the mean
+density notation entry is protected for conversion, with unchanged meaning.

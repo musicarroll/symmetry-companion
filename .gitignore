@@ -1,5 +1,6 @@
 /.lake/
 /.venv/
+/.tools/
 __pycache__/
 *.py[cod]
 /.env

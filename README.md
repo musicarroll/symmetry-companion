@@ -5,6 +5,10 @@ Symmetry Breaking: Symmetry, Randomness, and Relational Structures*.
 The manuscript is maintained separately in a private repository. This repository
 builds without access to it and starts with independent Git history.
 
+The current release version is recorded in `VERSION`. Book proof 0.1.0 cites
+companion tag `v0.1.0`; use that tag to reproduce the edition's supporting
+materials. Subsequent work may appear on the default branch.
+
 | Location | Contents |
 |---|---|
 | `src/`, `scripts/` | Numerical models, scans, plotting, and validation tools |
@@ -66,3 +70,5 @@ python3 -m unittest discover -s tests
 
 [SYNC.md](SYNC.md) documents coordination with an optional private manuscript
 checkout. [GITHUB_SETUP.md](GITHUB_SETUP.md) describes the first public push.
+[Publication tools and versioning](doc/publication-builds.md) describe the
+optional paperback/MathML EPUB builds for an explicitly supplied manuscript.

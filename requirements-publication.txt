@@ -1,0 +1,3 @@
+# Optional dependencies for the private manuscript publication build.
+lxml>=4.9
+Pillow>=9

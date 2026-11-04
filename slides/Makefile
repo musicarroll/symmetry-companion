@@ -8,7 +8,7 @@ all: check-sync pdf
 
 pdf: $(PDF)
 
-$(PDF): $(TEX) preamble.tex $(wildcard sections/*.tex) ../references.bib ../lean/generated/lean-ledger-counts.tex $(wildcard ../results/figures/*)
+$(PDF): $(TEX) preamble.tex ../VERSION $(wildcard sections/*.tex) ../references.bib ../lean/generated/lean-ledger-counts.tex $(wildcard ../results/figures/*)
 	pdflatex -interaction=nonstopmode -halt-on-error $(TEX)
 	bibtex symmetry-slides
 	pdflatex -interaction=nonstopmode -halt-on-error $(TEX)
