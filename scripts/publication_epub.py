@@ -38,7 +38,16 @@ def normalize_epub(source, target, metadata, version, asset_root=None):
     for item in manifest:
         if item.get("media-type") == "application/xhtml+xml":
             name = posixpath.normpath(posixpath.join(base, item.get("href")))
-            docs[item.get("id")] = (name, etree.fromstring(files[name]))
+            document = etree.fromstring(files[name])
+            # A line break separates the label visually, but contributes no
+            # text when navigation labels are extracted or readers omit it.
+            for heading in document.xpath("//h:h1 | //h:h2 | //h:h3", namespaces=NS):
+                if not {"chapterHead", "appendixHead"}.intersection(heading.get("class", "").split()):
+                    continue
+                for mark in heading.findall("h:span", NS):
+                    if "titlemark" in mark.get("class", "").split():
+                        mark.tail = " " + (mark.tail or "").lstrip()
+            docs[item.get("id")] = (name, document)
     nav_item = next(item for item in manifest if "nav" in item.get("properties", "").split())
     nav_id = nav_item.get("id")
     nav_path, nav_doc = docs[nav_id]
@@ -156,6 +165,32 @@ def normalize_epub(source, target, metadata, version, asset_root=None):
                 image.set("alt", "Figure: " + label)
         files[name] = serialize(document)
     meta = package.find("opf:metadata", NS)
+    cover_name = metadata.get("cover_image")
+    if cover_name:
+        relative = PurePosixPath(cover_name)
+        if relative.is_absolute() or ".." in relative.parts or asset_root is None:
+            raise ValueError("Cover image must be a relative path in the private book checkout")
+        cover = asset_root / cover_name
+        media = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg"}.get(cover.suffix.lower())
+        if media is None:
+            raise ValueError("Use a PNG or JPEG ebook cover")
+        # KDP requests an OPF cover-image entry, without an additional HTML
+        # cover page that could produce a duplicate during Kindle conversion.
+        for item in manifest:
+            properties = item.get("properties", "").split()
+            if "cover-image" in properties:
+                properties.remove("cover-image")
+                if properties:
+                    item.set("properties", " ".join(properties))
+                else:
+                    item.attrib.pop("properties", None)
+        cover_href = "images/kindle-cover" + cover.suffix.lower()
+        files[posixpath.join(base, cover_href)] = cover.read_bytes()
+        etree.SubElement(manifest, f"{{{OPF}}}item", id="publication-cover-image", href=cover_href,
+                         properties="cover-image", **{"media-type": media})
+        for old in meta.xpath("opf:meta[@name='cover']", namespaces=NS):
+            meta.remove(old)
+        etree.SubElement(meta, f"{{{OPF}}}meta", name="cover", content="publication-cover-image")
     full_title = metadata["title"] + ": " + metadata["subtitle"]
     for key, value in (("title", full_title), ("creator", metadata["author"]),
                        ("language", metadata["language"])):
@@ -195,4 +230,5 @@ def normalize_epub(source, target, metadata, version, asset_root=None):
             if name != "mimetype" and not name.endswith("/"):
                 archive.writestr(name, data, compress_type=zipfile.ZIP_DEFLATED)
     return {"native_mathml_expressions": math_count, "navigation_entries": len(entries),
-            "xhtml_documents": len(docs), "identifier": identifier}
+            "xhtml_documents": len(docs), "identifier": identifier,
+            "embedded_cover": bool(cover_name)}

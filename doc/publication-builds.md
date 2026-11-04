@@ -34,7 +34,13 @@ cover dimensions from the final even page count and creates a layout guide.
 
 The EPUB retains native MathML. Its postprocessor normalizes the ordered
 chapter/section navigation, bibliography metadata, image packaging, and linked
-indexes. EPUBCheck must pass without errors or warnings. Reports, cover
+indexes. Chapter and appendix labels include explicit text spacing so navigation
+labels survive readers that omit line breaks. An optional `cover_image` relative
+path in the private `publishing/metadata.json` embeds the original PNG/JPEG as
+the OPF `cover-image`, with compatibility cover metadata. No extra HTML cover
+page is inserted, following KDP guidance against duplicate covers. The same
+image is exported as `kindle-cover.png` (or `.jpg`) for the separate marketing
+cover upload. Artwork stays in the private checkout. EPUBCheck must pass without errors or warnings. Reports, cover
 parameters, and artifact hashes accompany the outputs in the private checkout.
 
 These automated checks do not emulate Amazon's converter or physical printer.

@@ -61,25 +61,30 @@ class PublicationTests(unittest.TestCase):
             root = Path(temporary)
             (root / "results/figures").mkdir(parents=True)
             (root / "results/figures/plot.png").write_bytes(b"fixture-image")
+            (root / "cover.png").write_bytes(b"fixture-cover")
             container = '<container xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="OEBPS/content.opf"/></rootfiles></container>'
             opf = '''<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="id">
 <metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title>Old</dc:title><dc:identifier id="id">old</dc:identifier><dc:creator>Anonymous</dc:creator><dc:language>en</dc:language></metadata>
-<manifest><item id="toc" href="toc.xhtml" media-type="application/xhtml+xml" properties="nav mathml"/><item id="chapter" href="chapter.xhtml" media-type="application/xhtml+xml"/></manifest>
-<spine><itemref idref="toc"/><itemref idref="chapter"/></spine></package>'''
+<manifest><item id="toc" href="toc.xhtml" media-type="application/xhtml+xml" properties="nav mathml"/><item id="chapter" href="chapter.xhtml" media-type="application/xhtml+xml"/><item id="appendix" href="appendix.xhtml" media-type="application/xhtml+xml"/></manifest>
+<spine><itemref idref="toc"/><itemref idref="chapter"/><itemref idref="appendix"/></spine></package>'''
             toc = '<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Contents</title></head><body><ol><span>Broken</span></ol></body></html>'
             chapter = '''<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 1</title></head><body>
-<h2>Finite Relational Structures and Symmetry</h2><h3>Relations</h3>
+<h2 class="chapterHead"><span class="titlemark">Chapter&#160;1</span><br/><a id="chapter-anchor"/>Finite Relational Structures and Symmetry</h2><h3>Relations</h3>
 <p>Keep this argument.</p><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi></math>
 <img src="results/figures/plot.png" alt="PIC"/></body></html>'''
+            appendix = '''<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Appendix A</title></head><body>
+<h2 class="appendixHead"><span class="titlemark">Appendix&#160;A</span><br/><a id="appendix-anchor"/>Computational Framework</h2></body></html>'''
             source, target = root / "source.epub", root / "final.epub"
             with zipfile.ZipFile(source, "w") as archive:
                 for name, content in {"mimetype": "application/epub+zip", "META-INF/container.xml": container,
                                       "OEBPS/content.opf": opf, "OEBPS/toc.xhtml": toc,
-                                      "OEBPS/chapter.xhtml": chapter}.items():
+                                      "OEBPS/chapter.xhtml": chapter, "OEBPS/appendix.xhtml": appendix}.items():
                     archive.writestr(name, content)
             report = normalize_epub(source, target, {"title": "Book", "subtitle": "Subtitle",
-                "author": "Author", "language": "en-US", "edition": "First edition", "status": "proof"}, "0.1.0", root)
+                "author": "Author", "language": "en-US", "edition": "First edition", "status": "proof",
+                "cover_image": "cover.png"}, "0.1.0", root)
             self.assertEqual(report["native_mathml_expressions"], 1)
+            self.assertTrue(report["embedded_cover"])
             with zipfile.ZipFile(target) as archive:
                 self.assertEqual(archive.infolist()[0].filename, "mimetype")
                 self.assertEqual(archive.infolist()[0].compress_type, zipfile.ZIP_STORED)
@@ -87,6 +92,19 @@ class PublicationTests(unittest.TestCase):
                 self.assertEqual(package.find("opf:metadata/dc:creator", NS).text, "Author")
                 nav = etree.fromstring(archive.read("OEBPS/toc.xhtml"))
                 self.assertEqual(nav.xpath("count(//h:ol/h:span)", namespaces=NS), 0)
+                labels = nav.xpath("//h:nav[@id='toc']/h:ol/h:li/h:a/text()", namespaces=NS)
+                self.assertEqual(labels, ["Chapter 1 Finite Relational Structures and Symmetry",
+                                          "Appendix A Computational Framework"])
+                for name in ("chapter", "appendix"):
+                    document = etree.fromstring(archive.read(f"OEBPS/{name}.xhtml"))
+                    self.assertEqual(document.find(".//h:span", NS).tail, " ")
+                covers = package.xpath("//opf:item[@properties='cover-image']", namespaces=NS)
+                self.assertEqual(len(covers), 1)
+                self.assertEqual(covers[0].get("media-type"), "image/png")
+                self.assertEqual(archive.read("OEBPS/" + covers[0].get("href")), b"fixture-cover")
+                cover_meta = package.find("opf:metadata/opf:meta[@name='cover']", NS)
+                self.assertEqual(cover_meta.get("content"), covers[0].get("id"))
+                self.assertEqual(package.xpath("count(//opf:spine/opf:itemref)", namespaces=NS), 3)
                 self.assertIn("Keep this argument.", archive.read("OEBPS/chapter.xhtml").decode())
                 self.assertEqual(archive.read("OEBPS/results/figures/plot.png"), b"fixture-image")
                 item = package.xpath("//opf:item[@id='chapter']", namespaces=NS)[0]

@@ -42,6 +42,13 @@ def stage(book, mode):
         shutil.copy2(book / name, work / name)
     for name in ("chapters", "results/figures", "publishing"):
         shutil.copytree(book / name, work / name)
+    metadata = json.loads((book / "publishing/metadata.json").read_text())
+    if metadata.get("cover_image"):
+        cover = Path(metadata["cover_image"])
+        if cover.is_absolute() or ".." in cover.parts:
+            raise ValueError("Cover image must be a relative path in the private book checkout")
+        (work / cover).parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(book / cover, work / cover)
     (work / "publishing/build-mode.tex").write_text(
         "\\def\\" + ("PaperbackEdition" if mode == "paperback" else "KindleEdition") + "{1}\n")
     if mode == "epub":
@@ -160,6 +167,11 @@ def epub(book, output):
     target = output / "symmetry-kindle-mathml.epub"
     metadata = json.loads((book / "publishing/metadata.json").read_text())
     report = normalize_epub(candidates[0], target, metadata, version(book / "VERSION"), work)
+    if metadata.get("cover_image"):
+        cover = work / metadata["cover_image"]
+        marketing_cover = output / ("kindle-cover" + cover.suffix.lower())
+        shutil.copy2(cover, marketing_cover)
+        report["marketing_cover"] = marketing_cover.name
     report["file"] = target.name
     checker = shutil.which("epubcheck")
     if checker:
@@ -220,7 +232,9 @@ Companion release: v{companion_version}.
   interior on white paper, no bleed. See `paperback-report.json` for the final
   even page count and automated PDF checks.
 - `symmetry-kindle-mathml.epub`: reflowable EPUB with native MathML, chapter and
-  section navigation, bibliography, and linked indexes. See `epub-report.json`
+  section navigation, bibliography, linked indexes, and the supplied cover.
+  `kindle-cover.png` is the separate cover image for the KDP listing.
+  See `epub-report.json`
   and `epubcheck.txt` for validation results.
 - `cover-layout-guide.pdf`, `cover-parameters.md`, `cover-parameters.json`:
   dimensioned back–spine–front guide and geometry for this exact interior.

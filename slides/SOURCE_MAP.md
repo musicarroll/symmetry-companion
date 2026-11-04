@@ -74,3 +74,8 @@ EPUB. Print panels and label sizes are adapted from the same recorded data;
 the source mathematical claims and measurements are unchanged. Existing
 mathematical and coverage frames remain consistent. The overline in the mean
 density notation entry is protected for conversion, with unchanged meaning.
+
+Publication correction review (4 November 2026): book and companion 0.1.1 fix
+EPUB heading-label spacing and add the supplied private cover to the ebook.
+Existing frames were reviewed; their mathematics, numerical data, and proof
+status remain consistent. Only the deck version changes.

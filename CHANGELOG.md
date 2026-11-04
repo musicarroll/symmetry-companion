@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.1 — 2026-11-04
+
+Repair EPUB chapter/appendix label spacing and package a configured private
+cover using EPUB cover-image metadata. Export the cover for separate KDP upload
+and include its bytes in the private source fingerprint. No mathematical claims,
+scientific data, or Lean proof scopes changed.
+
 ## 0.1.0 — 2026-11-04
 
 Initial versioned companion release: Python experiments and recorded results,

@@ -1,5 +1,6 @@
 """Shared paths and content digests for the public/private review workflow."""
 import hashlib
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -46,4 +47,12 @@ def book_digest(book):
     paths.extend((book / "doc").glob("*.md"))
     paths.extend(path for path in (book / "publishing").rglob("*")
                  if path.is_file() and path.suffix in {".tex", ".cfg", ".mk4", ".css", ".json"})
+    metadata_path = book / "publishing/metadata.json"
+    if metadata_path.exists():
+        cover = json.loads(metadata_path.read_text()).get("cover_image")
+        if cover:
+            cover_path = Path(cover)
+            if cover_path.is_absolute() or ".." in cover_path.parts:
+                raise ValueError("Cover image must be relative to the private book checkout")
+            paths.append(book / cover_path)
     return digest(book, paths)
