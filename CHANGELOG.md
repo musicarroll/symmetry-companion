@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2 — 2026-11-04
+
+Review the presentation against the revised manuscript front matter and rebuild
+companion materials for book proof 0.1.3. Mathematical claims, recorded numerical
+results, and Lean proof scopes are unchanged.
+
 ## 0.1.1 — 2026-11-04
 
 Repair EPUB chapter/appendix label spacing and package a configured private

@@ -79,3 +79,10 @@ Publication correction review (4 November 2026): book and companion 0.1.1 fix
 EPUB heading-label spacing and add the supplied private cover to the ebook.
 Existing frames were reviewed; their mathematics, numerical data, and proof
 status remain consistent. Only the deck version changes.
+
+Front-matter review (4 November 2026): the foundational and evidence-level
+frames were checked against the author's revised preface and the unchanged
+chapter statements. They correctly retain the distinction between mathematical
+arguments, numerical evidence, and selected formal proofs. Book proof 0.1.3
+uses companion 0.1.2. No mathematical, numerical, or proof-status slide changes
+are required; the deck version is refreshed.
