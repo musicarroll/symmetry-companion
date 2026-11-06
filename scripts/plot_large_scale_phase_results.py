@@ -116,7 +116,7 @@ def plot_finite_block_symmetry_deficit(finite_block: pd.DataFrame, out_dir: Path
             label=label,
         )
     ax.set_xlabel(r"$\lambda=p-q$")
-    ax.set_ylabel(r"mean variance-based symmetry deficit")
+    ax.set_ylabel(r"mean block-variance proxy")
     ax.set_title("Finite Relational Symmetry Deficit")
     ax.legend()
     fig.tight_layout()
@@ -132,7 +132,7 @@ def plot_mean_field_finite_comparison(two_block: pd.DataFrame, finite_block: pd.
     frame_two = two_block[two_block["n"] == n_max]
     axes[0].plot(frame_two["beta"], frame_two["symmetry_deficit_mean"], marker="o", ms=3)
     axes[0].set_xlabel(r"$\beta$")
-    axes[0].set_ylabel(r"mean symmetry deficit")
+    axes[0].set_ylabel(r"mean structural proxy")
     axes[0].set_title(fr"Mean-Field-Guided Scan ($N={n_max}$)")
 
     finite_max = finite_block[
@@ -145,7 +145,7 @@ def plot_mean_field_finite_comparison(two_block: pd.DataFrame, finite_block: pd.
         ms=3,
     )
     axes[1].set_xlabel(r"$\lambda=p-q$")
-    axes[1].set_ylabel(r"mean symmetry deficit")
+    axes[1].set_ylabel(r"mean structural proxy")
     axes[1].set_title(
         fr"Finite Relational Scan ($k={int(finite_max['k'].iloc[0])},\,N={int(finite_max['n'].iloc[0])}$)"
     )
@@ -167,7 +167,7 @@ def plot_monte_carlo_symmetry_deficit(mc_block: pd.DataFrame, out_dir: Path) -> 
             label=fr"$k={int(k)},\,N={int(n)}$",
         )
     ax.set_xlabel(r"$\lambda$")
-    ax.set_ylabel(r"mean symmetry deficit")
+    ax.set_ylabel(r"mean structural proxy")
     ax.set_title("Monte Carlo Relational Symmetry Deficit")
     ax.legend()
     fig.tight_layout()
@@ -187,7 +187,7 @@ def plot_monte_carlo_susceptibility(mc_block: pd.DataFrame, out_dir: Path) -> No
             label=fr"$k={int(k)},\,N={int(n)}$",
         )
     ax.set_xlabel(r"$\lambda$")
-    ax.set_ylabel(r"variance of symmetry deficit")
+    ax.set_ylabel(r"variance of structural proxy")
     ax.set_title("Monte Carlo Symmetry-Deficit Susceptibility")
     ax.legend()
     fig.tight_layout()
@@ -240,7 +240,7 @@ def plot_lattice_symmetry_deficit(lattice: pd.DataFrame, out_dir: Path) -> None:
             label=fr"$L={int(L)}$",
         )
     ax.set_xlabel(r"$\beta$")
-    ax.set_ylabel(r"mean symmetry deficit")
+    ax.set_ylabel(r"mean structural proxy")
     ax.set_title("Lattice Potts Symmetry Deficit")
     ax.legend()
     fig.tight_layout()
@@ -260,7 +260,7 @@ def plot_lattice_susceptibility(lattice: pd.DataFrame, out_dir: Path) -> None:
             label=fr"$L={int(L)}$",
         )
     ax.set_xlabel(r"$\beta$")
-    ax.set_ylabel(r"variance of symmetry deficit")
+    ax.set_ylabel(r"variance of structural proxy")
     ax.set_title("Lattice Potts Symmetry-Deficit Susceptibility")
     ax.legend()
     fig.tight_layout()
@@ -333,8 +333,8 @@ def plot_lattice_susceptibility_scaling_D(lattice: pd.DataFrame, out_dir: Path) 
     ax.plot(x, y, "o", ms=5, label="peak data")
     ax.plot(x_fit, y_fit, lw=2, ls="--", label=fr"fit slope $={coeffs[0]:.3f}$")
     ax.set_xlabel(r"$\log L$")
-    ax.set_ylabel(r"$\log \chi_{D,\max}$")
-    ax.set_title("Log-Log Symmetry-Deficit Peak Scaling")
+    ax.set_ylabel(r"$\log V_{D,\max}$")
+    ax.set_title("Raw structural variance fit")
     ax.legend()
     fig.tight_layout()
     fig.savefig(out_dir / "susceptibility_D_scaling_loglog.png", dpi=200)
@@ -372,8 +372,8 @@ def plot_lattice_susceptibility_scaling_M(lattice_samples: pd.DataFrame, out_dir
     ax.plot(x, y, "o", ms=5, label="peak data")
     ax.plot(x_fit, y_fit, lw=2, ls="--", label=fr"fit slope $={coeffs[0]:.3f}$")
     ax.set_xlabel(r"$\log L$")
-    ax.set_ylabel(r"$\log \chi_{M,\max}$")
-    ax.set_title("Log-Log Order-Parameter Peak Scaling")
+    ax.set_ylabel(r"$\log V_{M,\max}$")
+    ax.set_title("Raw order-parameter variance fit")
     ax.legend()
     fig.tight_layout()
     fig.savefig(out_dir / "susceptibility_M_scaling_loglog.png", dpi=200)

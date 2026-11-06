@@ -17,22 +17,13 @@ Monte Carlo peak height grows with N = False
 Monte Carlo peak width sharpens with N = False
 Lattice susceptibility peak grows with L = True
 Lattice susceptibility peak sharpens with L = True
-Lattice gamma/nu estimate = 2.959198
+Lattice raw Var(D) slope (legacy gamma/nu key) = 2.959198
 Lattice gamma/nu fit RMS = 0.753530
-Lattice percent error vs. 7/4 = 69.097
+Inapplicable legacy percent comparison vs. 7/4 = 69.097
 Terminal Landau polynomial fit error = 0.008333
 
-Monte Carlo finite-size conclusion: The observed peak suggests a crossover rather than a true phase transition.
-Lattice finite-size conclusion: The growth and sharpening of the susceptibility peak with system size indicates behavior consistent with a second-order phase transition in the thermodynamic limit.
-Lattice universality assessment: Finite-size effects or insufficient sampling may explain deviation.
+Monte Carlo finite-size conclusion: The independent-edge partition function factorizes and is analytic at every finite coupling. Saved short trajectories do not establish equilibrium; peak shapes cannot establish a collective transition.
+Lattice finite-size conclusion: The saved sparse grid and short trajectories do not resolve critical scaling. For q=2 and this Hamiltonian beta_c*J=log(1+sqrt(2)); the grid has no point between 0.5 and 1.0.
+Lattice universality assessment: No universality inference: the fitted quantity is raw Var(D), not magnetic susceptibility, and the critical region is unresolved.
 
-Assessment: Finite-size relational simulations show that symmetry deficit rises from a nearly permutation-invariant regime to a visibly structured regime in both mean-field-guided block ensembles and the first fully finite block-relational model. In the energy-based Monte Carlo model, symmetry deficit also develops a broad susceptibility peak whose finite-size behavior can be tested directly across multiple system sizes. The lattice Potts model adds spatial locality and provides a separate test of whether symmetry deficit sharpens in step with genuine collective ordering.
-
-Lattice order-parameter scaling analysis
-gamma/nu from chi_M = 0.985503
-gamma_D/nu from chi_D = 2.959198
-Expected range = [1.5, 2.0]
-Percent error for chi_M vs 7/4 = 43.686
-Percent error for chi_D vs 7/4 = 69.097
-Order-parameter assessment: Finite-size effects or insufficient sampling may explain deviation.
-
+Assessment: Mean-field-guided Bernoulli graphs sample prescribed probabilities; their agreement is not an independent microscopic derivation. Matrix variance is a contrast proxy, not a group index. The independent-edge Monte Carlo model is analytically noncritical and its saved short runs are not established equilibrium samples. The lattice grid and sampling do not resolve critical scaling.

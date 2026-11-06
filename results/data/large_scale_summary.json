@@ -47,7 +47,7 @@
   ],
   "mc_peak_height_grows_with_n": false,
   "mc_peak_width_sharpens_with_n": false,
-  "mc_finite_size_conclusion": "The observed peak suggests a crossover rather than a true phase transition.",
+  "mc_finite_size_conclusion": "The independent-edge partition function factorizes and is analytic at every finite coupling. Saved short trajectories do not establish equilibrium; peak shapes cannot establish a collective transition.",
   "lattice_peak_scaling": [
     {
       "L": 20.0,
@@ -73,7 +73,9 @@
   ],
   "lattice_peak_height_grows_with_l": true,
   "lattice_peak_width_sharpens_with_l": true,
-  "lattice_finite_size_conclusion": "The growth and sharpening of the susceptibility peak with system size indicates behavior consistent with a second-order phase transition in the thermodynamic limit.",
+  "lattice_finite_size_conclusion": "The saved sparse grid and short trajectories do not resolve critical scaling. For q=2 and this Hamiltonian beta_c*J=log(1+sqrt(2)); the grid has no point between 0.5 and 1.0.",
+  "lattice_raw_variance_slope": 2.9591975096029737,
+  "lattice_magnetic_exponent_comparison_valid": false,
   "lattice_gamma_over_nu_estimate": 2.9591975096029737,
   "lattice_gamma_over_nu_fit_rms": 0.7535304597994353,
   "lattice_gamma_over_nu_fit_r2": 0.5549277794699664,
@@ -82,7 +84,7 @@
     2.0
   ],
   "lattice_percent_error_vs_ising": 69.09700054874135,
-  "lattice_universality_assessment": "Finite-size effects or insufficient sampling may explain deviation.",
+  "lattice_universality_assessment": "No universality inference: the fitted quantity is raw Var(D), not magnetic susceptibility, and the critical region is unresolved.",
   "landau_fit_terminal_error": 0.0083325014574608,
-  "assessment": "Finite-size relational simulations show that symmetry deficit rises from a nearly permutation-invariant regime to a visibly structured regime in both mean-field-guided block ensembles and the first fully finite block-relational model. In the energy-based Monte Carlo model, symmetry deficit also develops a broad susceptibility peak whose finite-size behavior can be tested directly across multiple system sizes. The lattice Potts model adds spatial locality and provides a separate test of whether symmetry deficit sharpens in step with genuine collective ordering."
+  "assessment": "Mean-field-guided Bernoulli graphs sample prescribed probabilities; their agreement is not an independent microscopic derivation. Matrix variance is a contrast proxy, not a group index. The independent-edge Monte Carlo model is analytically noncritical and its saved short runs are not established equilibrium samples. The lattice grid and sampling do not resolve critical scaling."
 }

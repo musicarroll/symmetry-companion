@@ -19,7 +19,7 @@ jobs:
         run: python3 scripts/check_lean_coverage.py
       - name: Check repository boundaries and synchronization tools
         run: |
-          python3 -m pip install -r requirements-publication.txt
+          python3 -m pip install -r requirements.txt -r requirements-publication.txt
           python3 -m unittest discover -s tests
       - name: Check release version metadata
         run: python3 scripts/check_versions.py

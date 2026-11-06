@@ -86,3 +86,12 @@ chapter statements. They correctly retain the distinction between mathematical
 arguments, numerical evidence, and selected formal proofs. Book proof 0.1.3
 uses companion 0.1.2. No mathematical, numerical, or proof-status slide changes
 are required; the deck version is refreshed.
+
+Scientific audit (6 November 2026): reviewed all topic rows against the
+corrected manuscript and evidence scopes. Updated the numerical onset to 2.005,
+parameter-sector exchange terminology, lattice evidence limits and external
+preprint attribution. The continuum/gauge frames already identify open formal
+work and are conditional model geometry, not a derivation from finite deficit.
+Raw data values are unchanged; plot labels distinguish proxies. The independent
+edge model is noncritical, its short saved chains have unverified mixing, and
+the Potts grid does not resolve beta_c*J=log(1+sqrt(2)).

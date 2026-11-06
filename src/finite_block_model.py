@@ -1,9 +1,9 @@
 """Finite block-relational models with variance-based symmetry deficit.
 
 This module provides the first non-toy finite relational system used to test
-symmetry deficit beyond the mean-field scalar setting. The model is a random
-block graph with permutation symmetry of the block labels in the phase
-``p = q`` and broken block symmetry in the phase ``p != q``.
+symmetry deficit beyond the mean-field scalar setting. For equal-size blocks, the probability matrix preserves all block-label
+permutations for both ``p = q`` and ``p != q``. Its entry variance measures
+within/cross contrast, not loss of block-label symmetry or graph automorphisms.
 """
 
 from __future__ import annotations

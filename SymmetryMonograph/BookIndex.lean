@@ -534,7 +534,7 @@ def statements : List BookStatement := [
     source := "chapters/ch6/section7.tex",
     labelOrTitle := "thm:openai-hard-sphere-bec",
     bookLabel := "thm:openai-hard-sphere-bec",
-    scope := "External cited condensation theorem; not formalized or assumed as a Lean axiom.",
+    scope := "Reported external preprint theorem; source statement checked, full proof not independently verified here; not formalized or assumed as a Lean axiom.",
     leanNames := [],
     status := .externallyCited
   },

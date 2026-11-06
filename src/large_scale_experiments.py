@@ -147,7 +147,11 @@ def weighted_peak_width(frame: pd.DataFrame, x_col: str, y_col: str) -> float:
 
 
 def susceptibility_scaling_fit(lattice_grouped: pd.DataFrame) -> dict[str, float]:
-    """Fit chi_max(L) ~ L^(gamma/nu) from the lattice peak data."""
+    """Fit raw Var(D) peak slope, not the magnetic exponent gamma/nu.
+
+    Historical return keys are retained; the numerical comparison with 7/4
+    is inapplicable to this unscaled quadratic observable.
+    """
     peak_rows: list[dict[str, float]] = []
     for L, frame in lattice_grouped.groupby("L"):
         peak = frame.loc[frame["symmetry_deficit_susceptibility"].idxmax()]
@@ -170,9 +174,11 @@ def susceptibility_scaling_fit(lattice_grouped: pd.DataFrame) -> dict[str, float
     expected = 1.75
     estimate = float(coeffs[0])
     percent_error = float(100.0 * abs(estimate - expected) / expected)
-    consistent = bool(1.5 < estimate < 2.0)
+    consistent = False  # raw quadratic-proxy variance is not magnetic susceptibility
     return {
-        "gamma_over_nu_estimate": estimate,
+        "gamma_over_nu_estimate": estimate,  # legacy key; see raw_variance_slope
+        "raw_variance_slope": estimate,
+        "magnetic_exponent_comparison_valid": False,
         "fit_intercept": float(coeffs[1]),
         "fit_rms": rms,
         "fit_r2": r2,
@@ -558,10 +564,9 @@ def build_large_scale_summary(
     chi_grows = bool(np.all(np.diff(chi_values) > 0.0)) if len(chi_values) > 1 else False
     width_sharpens = bool(np.all(np.diff(width_values) < 0.0)) if len(width_values) > 1 else False
     mc_conclusion = (
-        "The growth and sharpening of the susceptibility peak with system size "
-        "indicates behavior consistent with a second-order phase transition in the thermodynamic limit."
-        if chi_grows and width_sharpens
-        else "The observed peak suggests a crossover rather than a true phase transition."
+        "The independent-edge partition function factorizes and is analytic at "
+        "every finite coupling. Saved short trajectories do not establish "
+        "equilibrium; peak shapes cannot establish a collective transition."
     )
     lattice_scaling_rows: list[dict[str, float]] = []
     for L, frame in lattice_grouped.groupby("L"):
@@ -587,15 +592,14 @@ def build_large_scale_summary(
     )
     lattice_peak_sharpens = bool(np.all(np.diff(lattice_width) < 0.0)) if len(lattice_width) > 1 else False
     lattice_conclusion = (
-        "The growth and sharpening of the susceptibility peak with system size indicates behavior consistent with a second-order phase transition in the thermodynamic limit."
-        if lattice_peak_grows and lattice_peak_sharpens
-        else "The observed peak suggests a crossover rather than a true phase transition."
+        "The saved sparse grid and short trajectories do not resolve critical "
+        "scaling. For q=2 and this Hamiltonian beta_c*J=log(1+sqrt(2)); "
+        "the grid has no point between 0.5 and 1.0."
     )
     lattice_exponent = susceptibility_scaling_fit(lattice_grouped)
     lattice_universality = (
-        "Results are consistent with 2D Potts universality class."
-        if lattice_exponent["consistent_with_potts_range"]
-        else "Finite-size effects or insufficient sampling may explain deviation."
+        "No universality inference: the fitted quantity is raw Var(D), not "
+        "magnetic susceptibility, and the critical region is unresolved."
     )
 
     return {
@@ -623,6 +627,8 @@ def build_large_scale_summary(
         "lattice_peak_height_grows_with_l": lattice_peak_grows,
         "lattice_peak_width_sharpens_with_l": lattice_peak_sharpens,
         "lattice_finite_size_conclusion": lattice_conclusion,
+        "lattice_raw_variance_slope": lattice_exponent["raw_variance_slope"],
+        "lattice_magnetic_exponent_comparison_valid": False,
         "lattice_gamma_over_nu_estimate": lattice_exponent["gamma_over_nu_estimate"],
         "lattice_gamma_over_nu_fit_rms": lattice_exponent["fit_rms"],
         "lattice_gamma_over_nu_fit_r2": lattice_exponent["fit_r2"],
@@ -631,14 +637,12 @@ def build_large_scale_summary(
         "lattice_universality_assessment": lattice_universality,
         "landau_fit_terminal_error": float(fit_row["fit_error"]) if fit_row is not None else None,
         "assessment": (
-            "Finite-size relational simulations show that symmetry deficit rises "
-            "from a nearly permutation-invariant regime to a visibly structured "
-            "regime in both mean-field-guided block ensembles and the first "
-            "fully finite block-relational model. In the energy-based Monte Carlo "
-            "model, symmetry deficit also develops a broad susceptibility peak whose "
-            "finite-size behavior can be tested directly across multiple system sizes. "
-            "The lattice Potts model adds spatial locality and provides a separate "
-            "test of whether symmetry deficit sharpens in step with genuine collective ordering."
+            "Mean-field-guided Bernoulli graphs sample prescribed probabilities; "
+            "their agreement is not an independent microscopic derivation. "
+            "Matrix variance is a contrast proxy, not a group index. "
+            "The independent-edge Monte Carlo model is analytically noncritical "
+            "and its saved short runs are not established equilibrium samples. "
+            "The lattice grid and sampling do not resolve critical scaling."
         ),
     }
 
@@ -682,11 +686,11 @@ def save_summary_text(summary: dict[str, object], out_path: Path) -> None:
         f"{summary['lattice_peak_height_grows_with_l']}",
         "Lattice susceptibility peak sharpens with L = "
         f"{summary['lattice_peak_width_sharpens_with_l']}",
-        "Lattice gamma/nu estimate = "
+        "Lattice raw Var(D) slope (legacy gamma/nu key) = "
         f"{summary['lattice_gamma_over_nu_estimate']:.6f}",
         "Lattice gamma/nu fit RMS = "
         f"{summary['lattice_gamma_over_nu_fit_rms']:.6f}",
-        "Lattice percent error vs. 7/4 = "
+        "Inapplicable legacy percent comparison vs. 7/4 = "
         f"{summary['lattice_percent_error_vs_ising']:.3f}",
         "Terminal Landau polynomial fit error = "
         f"{summary['landau_fit_terminal_error']:.6f}",

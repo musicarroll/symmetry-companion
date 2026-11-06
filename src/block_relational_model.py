@@ -166,7 +166,11 @@ def stabilizer_size(
     group: Iterable[Sequence[int]],
     tolerance: float,
 ) -> int:
-    """Return the size of the block-group stabilizer of ``rho``."""
+    """Count permutations preserving ``rho`` within tolerance.
+
+    At positive tolerance this set need not be a subgroup. Only exact
+    preservation (tolerance zero) defines a group stabilizer. Historical
+    function/CSV names are retained for reproducibility."""
     count = 0
     for perm in group:
         perm = tuple(perm)
@@ -182,7 +186,10 @@ def coarse_symmetry_deficit(
     group: Iterable[Sequence[int]],
     tolerance: float,
 ) -> float:
-    """Return the coarse block symmetry deficit log(|G| / |Stab_G(rho)|)."""
+    """Return log(group size / approximately preserving count).
+
+    At positive tolerance this is a heuristic score, not necessarily the
+    logarithm of a subgroup index."""
     group_list = [tuple(g) for g in group]
     stab = stabilizer_size(rho, group_list, tolerance=tolerance)
     if stab <= 0:

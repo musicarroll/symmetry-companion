@@ -240,7 +240,8 @@ Companion release: v{companion_version}.
   dimensioned back–spine–front guide and geometry for this exact interior.
 - `release-manifest.json`: input fingerprints and artifact SHA-256 hashes.
 
-The cover guide is not final cover artwork. Obtain the high-resolution art next.
+The cover guide is not upload artwork. Use a separately prepared full cover
+matched to this interior; see the private publishing/cover/README.md.
 Kindle Previewer and a KDP physical proof remain the device and manufacturing
 checks before publication. No Amazon account upload has been performed.
 """)

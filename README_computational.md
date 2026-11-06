@@ -1,4 +1,22 @@
 # Computational Notes
+## Scientific audit, 6 November 2026
+
+The block and occupation variance observables are proxies, not exact logarithmic
+automorphism deficits. Mean-field-guided Bernoulli graphs use the minimizing
+branch as input. An equal-block p/q matrix retains block-label permutation
+symmetry for p != q. Approximate preservers at positive tolerance need not form
+a subgroup.
+
+The edge Hamiltonian factorizes: Z=(1+exp(lambda))^M_within * 2^M_cross. It has
+no finite-coupling collective transition; saved short chains have unverified
+mixing. The q=2 Potts convention has beta_c*J=log(1+sqrt(2)), about 0.881374,
+which the archived grid does not resolve. Raw Var(D) slopes are not gamma/nu.
+Historical column names remain for compatibility; do not interpret legacy
+percent-error comparisons with 7/4 as valid exponent tests.
+
+See [scientific-audit.md](doc/scientific-audit.md) for independent checks and
+remaining limitations. Recorded raw data are preserved.
+
 
 This directory contains numerical verification packages for the Chapter 3
 mean-field, Landau, and finite-size block-relational models and the Chapter 6
@@ -130,9 +148,9 @@ The code checks agreement with the main Chapter 3 claims by comparing:
   product $(\mathbb Z_2)^N$ reference groups.
 
 The first two are local/Landau diagnostics and should agree with the analytic
-development. The finite-size simulations then test whether symmetry deficit
-behaves like an order-parameter-type diagnostic in nontrivial relational
-systems. If the numerics do not match the analytic picture, the summaries flag
+development. The finite-size simulations illustrate prescribed block distributions and
+structural proxies; see the audit limitations above before interpreting them
+as evidence of critical behavior. If the numerics do not match the analytic picture, the summaries flag
 that discrepancy rather than hiding it.
 
 ## Current Numerical Snapshot

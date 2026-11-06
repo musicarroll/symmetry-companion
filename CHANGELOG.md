@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3 — 2026-11-06
+
+Add seven independent scientific checks; correct interpretation of proxy diagnostics, approximate stabilizers, independent-edge sampling and Potts scaling. Regenerate summaries/plot labels from unchanged raw data, update slides and external-result scope. See doc/scientific-audit.md. Supports book 0.1.7.
+
 ## 0.1.2 — 2026-11-04
 
 Review the presentation against the revised manuscript front matter and rebuild
