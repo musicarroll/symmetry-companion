@@ -5,6 +5,8 @@ Symmetry Breaking: Symmetry, Randomness, and Relational Structures*.
 The manuscript is maintained separately in a private repository. This repository
 builds without access to it and starts with independent Git history.
 
+The book is available on Amazon:  https://www.amazon.com/dp/B0HR22Q63S/ref=sr_1_1?crid=271J1B70N1W7Y&dib=eyJ2IjoiMSJ9.JUh_vQnsDoba6Nrv5IL10UQBt-IpgN3V325ULk5Lg47FJaPMSxabL_Y9FkOteLu8DSx4oz3R62_sY2SNOJ9aSKXS-aVp1yNqx16IZ2SPBBXkaSiQaPne7Z0wvi5kKeDu5h41II12kM4YV-UxQitQR0lKuXxakiIYbHYSt411ZKEIXK0b9uC72Z9es0NwLE_FSSBpItzJeejBTm46hUUZ2Vw8rNvMPDxhThXGnlYaPT4.KW8fyzJ_UN68PCsz1aUoT0bCvvVh0Qg3nQ1IinPbcj0&dib_tag=se&keywords=algebraic%2Bsymmetry&qid=1794251749&sprefix=algebraic%2Bsymmetry%2Caps%2C162&sr=8-1&th=1
+
 The current release version is recorded in `VERSION`. Book proof 0.1.0 cites
 companion tag `v0.1.0`; use that tag to reproduce the edition's supporting
 materials. Subsequent work may appear on the default branch.
